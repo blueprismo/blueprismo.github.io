@@ -19,6 +19,7 @@
     padding-left: 20%;
     padding-right: 20%;
     line-height: 1.6;
+    margin-bottom:4em;
 }
 
 #content-wrapper h1, h2, h3, h4, h5 {
@@ -29,4 +30,10 @@
 
 #content-wrapper blockquote p {
   font-style: italic;
+}
+
+#content-wrapper img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }

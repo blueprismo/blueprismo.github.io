@@ -9,6 +9,8 @@
       {{ block "main" . }}
         <!-- The part of the page that begins to differ between templates -->  
       {{ end }}
+      {{ block "latest_work" .}}
+      {{ end }}
     </div>
     <!--  Footer  -->
     {{ block "footer" . }}
