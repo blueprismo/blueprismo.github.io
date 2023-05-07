@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>  
+  {{ partial "header" . }}
+  <body>
+    <!--  Menu navigation  -->
+    {{ partial "menu/menu.html" . }}
+    <div id="content-wrapper">
+      <!-- Code that all your templates share, like a header -->
+      {{ block "main" . }}
+        <!-- The part of the page that begins to differ between templates -->  
+      {{ end }}
+    </div>
+    <!--  Footer  -->
+    {{ block "footer" . }}
+    {{ end }}
+  </body>
+</html>

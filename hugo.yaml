@@ -1,0 +1,44 @@
+baseURL: 'http://example.org/'
+languageCode: 'en-us'
+title: 'blueprismo'
+enableEmoji: true
+googleAnalytics: "G-XC5Z9P941P"
+copyright: "© Blueprismo"
+enableRobotsTXT: true 
+
+# languages
+languages:
+  en:
+    params:
+      linkedin: https://linkedin.com/whoever
+    title: Blueprismo
+    weight: 1
+  es:
+    params:
+      linkedin: https://linkedin.com/fr/whoever
+    title: Blueprismo
+    weight: 2
+
+# menu
+menu:
+  main: 
+  - name: Posts
+    pageRef: /posts
+    url: /posts
+  - name: blog
+    pageRef: /blog
+    url: /blog
+  - name: About
+    pageRef: /about
+    url: /about
+  # - name: Aboutss
+  #   pageRef: /aboute
+  #   url: /about
+  # - name: Aboutaa
+  #   pageRef: /aboutr
+  #   url: /about
+# Sitemap 
+sitemap:
+  changefreq: monthly
+  filename: sitemap.xml
+  priority: 0.5

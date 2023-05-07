@@ -1,0 +1,42 @@
+// Menu
+nav {
+  position: -webkit-sticky; /* Support for Safari Browsers*/
+  position: sticky;
+  top: 0;
+  background-color: inherit;
+}
+
+#menu a, a:visited, a:active {
+  color: inherit;
+}
+
+#menu a:hover {
+  color: olive;
+}
+
+#menu {
+  display: flex;
+  justify-content: center;
+  gap: 0.5em;
+  flex-wrap: nowrap;
+  padding-bottom: 1%;
+  padding-top: 1%;
+  padding-left: 0;
+}
+
+#menu li {
+  //background-color: #696969;
+  display: inline;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+#menu li a {
+  display: inline;
+  font-size: 2em;
+}
+
+#menu .is-active {
+  color: #696969;
+  text-decoration-style: dashed;
+}
