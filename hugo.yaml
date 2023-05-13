@@ -1,4 +1,4 @@
-baseURL: 'http://example.org/'
+baseURL: 'http://localhost/'
 languageCode: 'en-us'
 title: 'blueprismo'
 enableEmoji: true
@@ -6,6 +6,8 @@ googleAnalytics: "G-XC5Z9P941P"
 copyright: "© Blueprismo"
 enableRobotsTXT: true 
 
+params:
+  prompt: "# Blueprismo"
 # languages
 languages:
   en:
@@ -25,9 +27,9 @@ menu:
   - name: Posts
     pageRef: /posts
     url: /posts
-  - name: Blog
-    pageRef: /blog
-    url: /blog
+  - name: CV
+    pageRef: /cv
+    url: /cv
   - name: About
     pageRef: /about
     url: /about
@@ -37,6 +39,7 @@ menu:
   # - name: Aboutaa
   #   pageRef: /aboutr
   #   url: /about
+
 # Sitemap 
 sitemap:
   changefreq: monthly
@@ -47,12 +50,11 @@ markup:
   highlight:
     anchorLineNos: false
     codeFences: true
-    guessSyntax: false
+    guessSyntax: true
     lineAnchors: ""
     lineNoStart: 1
     lineNos: false
     lineNumbersInTable: true
     noClasses: true
     noHl: false
-    style: dracula 
-    tabWidth: 2
+    tabWidth: 4

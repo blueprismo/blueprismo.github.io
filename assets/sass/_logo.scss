@@ -1,0 +1,25 @@
+
+.logo {
+    align-items: center;
+    display: flex;
+}
+
+.logo_text {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+  
+// Animation
+@keyframes cursor {
+  50%  {background-color: #c5c5c5;}
+}
+
+.logo_cursor  {
+  display: inline-block;
+  width: 8px;
+  height: 1rem;
+  animation: cursor 1s infinite;
+  margin-left: 5px;
+  border-radius: 1px;
+}
+  

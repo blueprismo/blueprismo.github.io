@@ -23,7 +23,7 @@ The way Angular binds data into the HTML is via expressions, and AngularJS expre
 - As a first step (and we assume our vulnerable webapp is using Angular as the underlying technology) a `ng-app` **must appear** inside the source code. Otherwise our AngularJS expressions won't work
 - Then, a vulnerable user input should be localized (in order to inject our payloads)
 - Before the last step, we must ensure that the vulnerable input field is within the `ng-app` directive
-- At last, let's put our XSS Payload inside braces, we can test it with one such as: `{{$on.constructor("alert(1)")()}}`*
+- At last, let's put our XSS Payload inside braces, we can test it with one such as: `` {{$on.constructor("alert(1)")()}}`` *
 
 
 * We are using "$on.constructor" in this case because we want to use dependency injection upon the new DOM node creation, you can find more info [here](https://angular.io/guide/dependency-injection#providing-dependency-1), in this case `NgOnInit` wouldn't work for us because when this latter one is called by Angular, the DOM has been already created. ["Here's an article with more information about it"](https://medium.com/angular-in-depth/the-essential-difference-between-constructor-and-ngoninit-in-angular-c9930c209a42)

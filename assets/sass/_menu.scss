@@ -1,0 +1,48 @@
+// // Menu
+.menu {
+  display: flex;
+}
+
+// Decorators:
+.menu .is-active {
+  color: #696969;
+  text-decoration-style: dashed;
+}
+
+.menu a, a:visited, a:active {
+    color: inherit;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
+
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.menu li {
+  margin: 0 0.5rem;
+}
+
+.menu a {
+  text-decoration: none;
+}
+
+/* responsive styles */
+// @media screen and (max-width: 600px) {
+//     .menu {
+//       display: none;
+//     }
+ 
+//     .title {
+//       font-size: 1.5rem;
+//     }
+    
+//     header {
+//       padding: 1rem 0.5rem;
+//     }
+// }

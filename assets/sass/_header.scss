@@ -1,0 +1,22 @@
+header {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    background-color: #333;
+    color: #c5c5c5;
+    padding: 1.5rem;
+    text-rendering: optimizeLegibility;
+    //padding: 2em;
+}
+
+.header_inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 900px;
+    max-width: 100%;
+}
+  

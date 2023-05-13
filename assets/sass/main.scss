@@ -3,11 +3,21 @@
 }
 
 body {
-  background-color: #1c1c1c;
-  color: white;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background-color: #292a2d;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-}
+/* Must be loaded before everything else */
+@import "fonts";
+@import "content_wrapper";
+@import "header";
+@import "grid";
+@import "menu";
+@import "footer";
+@import "responsive_images";
+@import "logo";
+@import "aria_main";

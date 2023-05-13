@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>  
-  {{ partial "header" . }}
   <body>
+    {{ partial "head" . }}
     <!--  Menu navigation  -->
-    {{ partial "menu/menu.html" . }}
+    {{ partial "header/header.html" . }}
+    
     <div id="content-wrapper">
       <!-- Code that all your templates share, like a header -->
       {{ block "main" . }}
@@ -11,9 +12,9 @@
       {{ end }}
       {{ block "latest_work" .}}
       {{ end }}
+      <!--  Footer  -->
+      {{ block "footer" . }}
+      {{ end }}
     </div>
-    <!--  Footer  -->
-    {{ block "footer" . }}
-    {{ end }}
   </body>
 </html>
