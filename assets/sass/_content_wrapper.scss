@@ -1,41 +1,19 @@
-#content-wrapper a:hover {
-    color: #fd3519;
-    text-decoration: none;
-    border-bottom: #8494a4 1px dashed;
-    padding-bottom: 1px;
+// In-line svgs
+.inline-svg {
+  display: inline-block;
+  svg {
+    width: 2em;
+    height: 2em;
+    display: inline-block;
+  }
 }
 
-#content-wrapper a {
-    color: #f8f8f8;
-    font-weight: bold;
-    text-decoration: none;
-    border-bottom: #8494a4 1px dashed;
-    padding-bottom: 1px;
-}
+#content_wrapper {
+  flex: 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-// main block 
-#content-wrapper {
-    text-align: justify;
-    padding-left: 20%;
-    padding-right: 20%;
-    line-height: 1.6;
-    background-color: #292a2d;
-    color: white;
-    text-rendering: optimizeLegibility;
-}
-
-#content-wrapper h1, h2, h3, h4, h5 {
-  text-align: center;
-  padding-left: 20%;
-  padding-right: 20%;
-}
-
-#content-wrapper blockquote p {
-  font-style: italic;
-}
-
-#content-wrapper img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  // Padding to the left and right side:
+  padding: 0% 10% 0% 10%;
 }

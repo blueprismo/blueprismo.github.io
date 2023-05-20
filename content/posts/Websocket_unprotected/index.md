@@ -1,7 +1,7 @@
 ---
 title: XSS Vulnerabilities
 description: Explanation of some XSS Vulnerabilities
-date: "2025-07-23T10:00:00+02:00"
+date: "2025-03-23T10:00:00+02:00"
 
 ---
 
@@ -9,7 +9,7 @@ date: "2025-07-23T10:00:00+02:00"
 
 # Introduction
 
-Today I'm going to talk about web sockets, you may have found `wss://` or `ws://` somewhere and wonder what's that, well I'll try to explain the best I can :)
+Today I'm going to talk about web sockets, you may have found {{< h sh >}} wss:// {{< /h >}} or `ws://` somewhere and wonder what's that, well I'll try to explain the best I can :)
 
 ## What are web Sockets?
 WebSockets are widely used in modern web applications. They are initiated over HTTP and provide long-lived connections with asynchronous communication in both directions.

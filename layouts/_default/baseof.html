@@ -3,15 +3,14 @@
   <body>
     {{ partial "head" . }}
     <!--  Menu navigation  -->
-    {{ partial "header/header.html" . }}
-    
-    <div id="content-wrapper">
-      <!-- Code that all your templates share, like a header -->
-      {{ block "main" . }}
-        <!-- The part of the page that begins to differ between templates -->  
-      {{ end }}
-      {{ block "latest_work" .}}
-      {{ end }}
+    <div class="container">
+      {{ partial "header/header.html" . }}
+      <div id="content_wrapper">
+        <!-- Code that all your templates share, like a header -->
+        {{ block "main" . }}
+          <!-- The part of the page that begins to differ between templates -->  
+        {{ end }}
+      </div>
       <!--  Footer  -->
       {{ block "footer" . }}
       {{ end }}

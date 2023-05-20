@@ -9,15 +9,21 @@ body {
   min-height: 100vh;
   flex-direction: column;
   background-color: #292a2d;
+  color: #c5c5c5;
+}
+
+html{
+  letter-spacing: .06em;
+  line-height: 1.6;
 }
 
 /* Must be loaded before everything else */
 @import "fonts";
 @import "content_wrapper";
 @import "header";
-@import "grid";
 @import "menu";
 @import "footer";
 @import "responsive_images";
 @import "logo";
 @import "aria_main";
+@import "container";

@@ -8,6 +8,18 @@ enableRobotsTXT: true
 
 params:
   prompt: "# Blueprismo"
+  social:
+  - name: Github
+    image: /images/socials/github.svg
+    value: https://github.com/blueprismo
+  - name: Linkedin
+    image: /images/socials/linkedin.svg
+    value: https://www.linkedin.com/in/enin-k-132432b6/
+  - name: Mail
+    image: /images/socials/mail.svg
+    value: "mailto:eninkadukk@gmail.com"
+
+
 # languages
 languages:
   en:
@@ -33,12 +45,6 @@ menu:
   - name: About
     pageRef: /about
     url: /about
-  # - name: Aboutss
-  #   pageRef: /aboute
-  #   url: /about
-  # - name: Aboutaa
-  #   pageRef: /aboutr
-  #   url: /about
 
 # Sitemap 
 sitemap:
@@ -58,3 +64,6 @@ markup:
     noClasses: true
     noHl: false
     tabWidth: 4
+    style: monokai
+
+enableInlineShortcodes: true

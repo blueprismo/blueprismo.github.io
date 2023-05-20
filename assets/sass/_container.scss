@@ -1,0 +1,47 @@
+.container {
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    flex: 1 auto;
+    text-rendering: optimizeLegibility;
+}
+
+// CODE block
+// Do not overflow codeblocks, allow scroll if length surpasses
+code > span {
+  overflow: scroll;
+}
+// inline, this should be removed!
+code {
+  background-color: black;
+  border-radius: 0.25rem;
+}
+
+
+// #content-wrapper a:hover {
+//     color: #fd3519;
+//     text-decoration: none;
+//     border-bottom: #8494a4 1px dashed;
+//     padding-bottom: 1px;
+// }
+
+// #content-wrapper a {
+//     color: #f8f8f8;
+//     font-weight: bold;
+//     text-decoration: none;
+//     border-bottom: #8494a4 1px dashed;
+//     padding-bottom: 1px;
+// }
+
+// // main block 
+
+
+// #content-wrapper h1, h2, h3, h4, h5 {
+//   text-align: center;
+//   padding-left: 20%;
+//   padding-right: 20%;
+// }
+
+#content_wrapper blockquote p {
+  font-style: italic;
+}
