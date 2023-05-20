@@ -131,15 +131,21 @@ code {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between; }
+  justify-content: space-around; }
 
 .readingmetadata {
   display: flex;
   flex-direction: row;
   gap: 1rem; }
 
+.postmetadata_footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around; }
+
 @media only screen and (max-width: 800px) {
-  .readingmetadata {
+  .readingmetadata, .postmetadata_footer {
     display: none; }
   .postmetadata {
     display: block; } }

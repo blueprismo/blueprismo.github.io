@@ -16,30 +16,13 @@
   </div>
 </section>
 
-<aside id="meta">
-  <div>
-  
-    {{ with .GetTerms "topics" }}
-      <ul id="topics">
-        {{ range . }}
-          <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
-        {{ end }}
-      </ul>
-    {{ end }}
-    {{ with .GetTerms "tags" }}
-      <ul id="tags">
-        {{ range . }}
-          <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
-        {{ end }}
-      </ul>
-    {{ end }}
-  </div>
-  <div>
+<aside>
+  <div class="postmetadata_footer">
     {{ with .PrevInSection }}
-      <a class="previous" href="{{ .Permalink }}"> {{ .Title }}</a>
+    <span> Previous: <a class="previous" href="{{ .Permalink }}"> {{ .Title }}</a></span>
     {{ end }}
     {{ with .NextInSection }}
-      <a class="next" href="{{ .Permalink }}"> {{ .Title }}</a>
+    <span> Next: <a class="next" href="{{ .Permalink }}"> {{ .Title }} </a></span>
     {{ end }}
   </div>
 </aside>
