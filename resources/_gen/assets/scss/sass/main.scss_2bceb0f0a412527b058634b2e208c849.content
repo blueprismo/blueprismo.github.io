@@ -126,3 +126,20 @@ code {
 
 #content_wrapper blockquote p {
   font-style: italic; }
+
+.postmetadata {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between; }
+
+.readingmetadata {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem; }
+
+@media only screen and (max-width: 800px) {
+  .readingmetadata {
+    display: none; }
+  .postmetadata {
+    display: block; } }
