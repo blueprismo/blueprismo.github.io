@@ -34,6 +34,6 @@
 }
 
 // Unordered lists appear with the dot at the beggining of the word 
-#content ul, ol {
+#content,.post  ul, ol {
     list-style-position: inside;
 }

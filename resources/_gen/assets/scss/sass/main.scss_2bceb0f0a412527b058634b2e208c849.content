@@ -207,5 +207,5 @@ code {
   margin-right: auto;
   width: 50%; }
 
-#content ul, ol {
+#content, .post ul, ol {
   list-style-position: inside; }
