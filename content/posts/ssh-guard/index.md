@@ -1,6 +1,6 @@
 ---
 title: SSH Guard
-description:  Creating a ssh guard which will tell us whenever a user logs in/out from our server.
+summary:  Creating a ssh guard which will tell us whenever a user logs in/out from our server.
 date: "2021-08-16T23:47:00+02:00"
 ---
 

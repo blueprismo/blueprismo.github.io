@@ -1,21 +1,24 @@
 {{ define "main" }}
 <div class="list">
-{{ range first 10 .Pages }}
-    <article>
-      <!-- this <div> includes the title summary -->
-      <div>
-        <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-        {{ .Summary }}
-      </div>
+  {{ range .Pages.GroupByDate "2006" }}
+  <h1>{{ .Key }}</h1>
+
+    {{ range .Pages }}
+    <div>
+      <a href="{{ .Permalink }}">{{ .Title }}</a><br/>
+      <div class="meta">{{ .Date.Format "02-01-2006" }}</div>
+       {{ .Summary }}
       {{ if .Truncated }}
       <!-- This <div> includes a read more link, but only if the summary is truncated... -->
       <div>
-        <a href="{{ .RelPermalink }}" id="read_more">Read More…</a>
+        <a href="{{ .Permalink }}" id="read_more">Read More…</a>
       </div>
+      {{ end }}  
       <br/>
       <br/>
-      {{ end }}
-    </article>
+    </div>
+    {{ end }}
+
 {{ end }}
 </div>
 {{ end }}

@@ -1,6 +1,6 @@
 ---
 title: XSS Vulnerabilities
-description: Explanation of some XSS Vulnerabilities
+summary: Explanation of some XSS Vulnerabilities
 date: "2021-07-23T10:00:00+02:00"
 
 ---

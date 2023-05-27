@@ -1,6 +1,6 @@
 ---
 title: Setting up a 3-node cluster with GlusterFS
-description: GlusterFS 3 node cluster
+summary: GlusterFS 3 node cluster
 date: "2019-10-10T19:47:09+02:00"
 thumbnail: "fibo1.png"
 ---

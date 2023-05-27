@@ -1,8 +1,7 @@
 ---
 title: Angular XSS DOM BASED
-description: Explanation of XSS Angular DOM based vulnerability.
+summary: Explanation of XSS Angular DOM based vulnerability.
 date: "2022-08-07T10:00:00+02:00"
-
 ---
 
 

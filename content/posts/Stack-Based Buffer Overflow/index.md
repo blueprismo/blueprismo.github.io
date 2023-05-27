@@ -1,6 +1,6 @@
 ---
 title: Stack-Based Buffer Overflow
-description: Stack-Based Buffer Overflow Attacks Explained
+summary: Stack-Based Buffer Overflow Attacks Explained
 date: "2021-02-09T10:00:00+02:00"
 
 ---

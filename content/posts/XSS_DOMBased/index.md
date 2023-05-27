@@ -1,6 +1,6 @@
 ---
 title: XSS DOM BASED
-description: Explanation of how DOM-Based XSS vulnerabilities work.
+summary: Explanation of how DOM-Based XSS vulnerabilities work.
 date: "2021-09-12T10:00:00+02:00"
 
 ---

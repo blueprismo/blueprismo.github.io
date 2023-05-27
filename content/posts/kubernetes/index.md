@@ -1,6 +1,6 @@
 ---
 title: Kubernetes
-description: Deploying an application with kubernetes and a volume.
+summary: Deploying an application with kubernetes and a volume.
 date: "2020-11-25T10:00:00+02:00"
 thumbnail: "fibo1.png"
 ---

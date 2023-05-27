@@ -40,11 +40,11 @@ Updated 27 May 2023
   Cloud Design Patterns  
 
 [Nexus Geographics](https://www.nexusgeographics.com/) - Sysadmin/Devops (Girona)  
-Some side-hustles with [bisual](https://bisual.net/) - Platform Engineer (Girona)  
 
 ## 2020
 [Nexus Geographics](https://www.nexusgeographics.com/) - Sysadmin/Devops (Girona)  
-Some side-hustles with [bisual](https://bisual.net/) - Platform Engineer (Girona)
+[bisual](https://bisual.net/) - Platform Engineer (Girona)  
+  Some occasional side-hustles 
 
 ## 2019
 [Nexus Geographics](https://www.nexusgeographics.com/) - Sysadmin/Devops (Girona)  
@@ -66,7 +66,6 @@ Some side-hustles with [bisual](https://bisual.net/) - Platform Engineer (Girona
   Having lots of fun 
   
 [Pizzeria Queixalada](https://www.google.com/maps/place/Pizzeries+Queixalada/@41.9764291,2.8223064,15z/data=!4m6!3m5!1s0x12bae6d9838edcd5:0xcf52f773ec3304ce!8m2!3d41.9764291!4d2.8223064!16s%2Fg%2F11bttp_hbr?entry=ttu) - Pizza Delivery (Girona)  
-
 I once fell of the moto during a late-night rainy delivery, nevertheless the pizza was delivered like this:  
 ![destroyed_pizza](pizza.jpeg)  
 The [review](https://g.co/kgs/ah2388) was hilarious

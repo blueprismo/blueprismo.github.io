@@ -1,6 +1,6 @@
 ---
 title: Continuous integration
-description:  CI with flask, nginx, postgis and angular.
+summary:  CI with flask, nginx, postgis and angular.
 date: "2020-10-21T19:47:09+02:00"
 thumbnail: ""
 ---

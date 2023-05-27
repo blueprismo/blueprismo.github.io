@@ -1,6 +1,6 @@
 ---
 title: Playing with Gnu Debugger
-description: Welcome to this project
+summary: Welcome to this project
 date: "2019-10-10T19:47:09+02:00"
 thumbnail: "fibo1.png"
 ---
