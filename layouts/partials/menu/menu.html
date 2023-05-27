@@ -1,10 +1,11 @@
 <nav aria-label="Main Navigation" class="menu">
   <ul>
     {{ $currentPage := . }}
+
     {{ range .Site.Menus.main }}
-      <li>
+      <li class="hover-underline-animation">
         <a 
-        class="{{ if $currentPage.IsMenuCurrent "main" . }}is-active{{ end }}" 
+        class="{{ if or ($currentPage.HasMenuCurrent "main" .) ($currentPage.IsMenuCurrent "main" .) }}is-active{{ end }}" 
         href="{{ .URL }}">
           {{ .Name }}
         </a>

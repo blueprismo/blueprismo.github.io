@@ -13,7 +13,26 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-  // Padding to the left and right side:
   padding: 0% 10% 0% 10%;
+}
+
+#content_wrapper blockquote p {
+  font-style: italic;
+}
+
+#content_wrapper a:hover {
+  color: rgb(219, 210, 36);
+  border-bottom: #8e8e8e 0.15rem dashed;
+}
+
+#content_wrapper a {
+  color: #fff;
+  transition: all .15s;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.post a {
+  border-bottom: #8e8e8e 0.15rem dashed;
+
 }

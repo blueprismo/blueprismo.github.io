@@ -27,8 +27,6 @@ You can find more information about it [here](https://owasp.org/www-community/at
 
 ### Hands on! :fire:
 
-
-#### The problem
 In this example, we found ourselves in a challenge from root-me: a cybersec training website.
 
 This challenge greets us with a game. This game requires us to input a number into a form, then it's compared to a random number. If it comes to be the same number, a green message appears, otherwise a red message appears.

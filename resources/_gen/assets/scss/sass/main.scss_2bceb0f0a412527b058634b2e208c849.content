@@ -36,6 +36,22 @@ code {
   justify-content: center;
   padding: 0% 10% 0% 10%; }
 
+#content_wrapper blockquote p {
+  font-style: italic; }
+
+#content_wrapper a:hover {
+  color: #dbd224;
+  border-bottom: #8e8e8e 0.15rem dashed; }
+
+#content_wrapper a {
+  color: #fff;
+  transition: all .15s;
+  font-weight: bold;
+  text-decoration: none; }
+
+.post a {
+  border-bottom: #8e8e8e 0.15rem dashed; }
+
 header {
   display: flex;
   position: relative;
@@ -57,14 +73,10 @@ header {
   display: flex; }
 
 .menu .is-active {
-  color: #696969;
-  text-decoration-style: dashed; }
+  color: white; }
 
 .menu a, a:visited, a:active {
   color: inherit; }
-
-.menu a:hover {
-  text-decoration: underline; }
 
 .menu ul {
   list-style: none;
@@ -77,6 +89,27 @@ header {
 
 .menu a {
   text-decoration: none; }
+
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+  color: #8e8e8e; }
+
+.hover-underline-animation:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #8e8e8e;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out; }
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left; }
 
 footer {
   padding: 40px 20px;
@@ -107,9 +140,6 @@ img {
   margin-left: 5px;
   border-radius: 1px; }
 
-main {
-  text-align: center; }
-
 .container {
   display: flex;
   flex-direction: column;
@@ -123,9 +153,6 @@ code > span {
 code {
   background-color: black;
   border-radius: 0.25rem; }
-
-#content_wrapper blockquote p {
-  font-style: italic; }
 
 .postmetadata {
   display: flex;
@@ -149,3 +176,36 @@ code {
     display: none; }
   .postmetadata {
     display: block; } }
+
+#content {
+  text-align: center; }
+
+#content h1, h2, h3, h4, h5, h6 {
+  text-align: center; }
+
+#content h1 {
+  font-size: 2.05em; }
+
+#content h2 {
+  font-size: 1.95em; }
+
+#content h3 {
+  font-size: 1.60em; }
+
+#content h4 {
+  font-size: 1.35em; }
+
+#content h5 {
+  font-size: 1.20em; }
+
+#content h6 {
+  font-size: 1.05em; }
+
+#content img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%; }
+
+#content ul, ol {
+  list-style-position: inside; }

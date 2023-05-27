@@ -1,4 +1,5 @@
 {{ define "main" }}
+<div class="list">
 {{ range first 10 .Pages }}
     <article>
       <!-- this <div> includes the title summary -->
@@ -9,9 +10,12 @@
       {{ if .Truncated }}
       <!-- This <div> includes a read more link, but only if the summary is truncated... -->
       <div>
-        <a href="{{ .RelPermalink }}">Read More…</a>
+        <a href="{{ .RelPermalink }}" id="read_more">Read More…</a>
       </div>
+      <br/>
+      <br/>
       {{ end }}
     </article>
 {{ end }}
+</div>
 {{ end }}

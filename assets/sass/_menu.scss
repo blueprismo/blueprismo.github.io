@@ -5,16 +5,11 @@
 
 // Decorators:
 .menu .is-active {
-  color: #696969;
-  text-decoration-style: dashed;
+  color: white;
 }
 
 .menu a, a:visited, a:active {
     color: inherit;
-}
-
-.menu a:hover {
-    text-decoration: underline;
 }
 
 .menu ul {
@@ -30,4 +25,29 @@
 
 .menu a {
   text-decoration: none;
+}
+
+//underline animation
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+  color: #8e8e8e;
+}
+
+.hover-underline-animation:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #8e8e8e;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }

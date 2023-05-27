@@ -1,0 +1,39 @@
+#content {
+    text-align: center;
+}
+
+// Header sizes
+#content h1,h2,h3,h4,h5,h6 {
+    text-align: center;
+}
+#content h1 {
+    font-size: 2.05em;
+}
+#content h2 {
+    font-size: 1.95em;
+}
+#content h3 {
+    font-size: 1.60em;
+}
+#content h4 {
+    font-size: 1.35em;
+}
+#content h5 {
+    font-size: 1.20em;
+}
+#content h6 {
+    font-size: 1.05em;
+}
+
+// Center images
+#content img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+// Unordered lists appear with the dot at the beggining of the word 
+#content ul, ol {
+    list-style-position: inside;
+}

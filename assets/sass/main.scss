@@ -25,6 +25,6 @@ html{
 @import "footer";
 @import "responsive_images";
 @import "logo";
-@import "aria_main";
 @import "container";
-@import "postmetadata";
+@import "posts/post_metadata";
+@import "posts/post_content";
