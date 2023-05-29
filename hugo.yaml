@@ -1,4 +1,4 @@
-baseURL: 'http://blueprismo.com/'
+baseURL: 'https://blueprismo.com'
 languageCode: 'en-us'
 title: 'blueprismo'
 enableEmoji: true

@@ -21,7 +21,7 @@
 <link rel="stylesheet" href="{{ $CSS.Permalink }}" media="all">  */}}
 
 {{ $style := resources.Get "sass/main.scss" | resources.ToCSS | resources.Fingerprint }}
-<link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">
+<link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity | default "anonymous" }}">
 
 {{/*  {{ $prismjs := resources.Get "js/prism.js" | resources.Minify }}
 {{ $prismjs = $prismjs | fingerprint "md5" }}

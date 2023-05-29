@@ -5,13 +5,13 @@
 
     {{ range .Pages }}
     <div>
-      <a href="{{ .Permalink }}">{{ .Title }}</a><br/>
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a><br/>
       <div class="meta">{{ .Date.Format "02-01-2006" }}</div>
        {{ .Summary }}
       {{ if .Truncated }}
       <!-- This <div> includes a read more link, but only if the summary is truncated... -->
       <div>
-        <a href="{{ .Permalink }}" id="read_more">Read More…</a>
+        <a href="{{ .RelPermalink }}" id="read_more">Read More…</a>
       </div>
       {{ end }}  
       <br/>
