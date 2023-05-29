@@ -1,20 +1,10 @@
-{{/*  {{ $style := resources.Get "sass/main.scss" | resources.ToCSS | resources.Minify }}
-  <link rel="stylesheet" href="{{ $style.Permalink }}">
-
-{{ $style := resources.Get "sass/_fonts.scss" | resources.ToCSS | resources.Minify }}
-  <link rel="stylesheet" href="{{ $style.Permalink }}">
-
-{{ $style := resources.Get "sass/grid.scss" | resources.ToCSS | resources.Minify }}
-  <link rel="stylesheet" href="{{ $style.Permalink }}">  
-
-{{ $style := resources.Get "sass/content_wrapper.scss" | resources.ToCSS | resources.Minify }}
-  <link rel="stylesheet" href="{{ $style.Permalink }}">  
-
+{{/*
 {{ $style := resources.Get "sass/footer.scss" | resources.ToCSS | resources.Minify }}
   <link rel="stylesheet" href="{{ $style.Permalink }}"> 
 
 {{ $style := resources.Get "sass/navbar.scss" | resources.ToCSS | resources.Minify }}
-  <link rel="stylesheet" href="{{ $style.Permalink }}">   */}}
+  <link rel="stylesheet" href="{{ $style.Permalink }}">   
+*/}}
 
 <!-- This loop should work, but navbar does not work... may post and work afterwards -->
 {{/*  {{ $CSS := resources.Match "sass/**.scss" | resources.Concat "styles.css" }}
@@ -22,11 +12,3 @@
 
 {{ $style := resources.Get "sass/main.scss" | resources.ToCSS | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity | default "anonymous" }}">
-
-{{/*  {{ $prismjs := resources.Get "js/prism.js" | resources.Minify }}
-{{ $prismjs = $prismjs | fingerprint "md5" }}
-<script src="{{ $prismjs.RelPermalink }}"></script>
-
-{{ $prismcss := resources.Get "css/prism.css" | resources.Minify }}
-{{ $prismcss = $prismcss | fingerprint "md5" }}
-<link rel="stylesheet" href="{{ $prismcss.RelPermalink }}">  */}}
