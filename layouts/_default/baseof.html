@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">  
   <body>
-    {{ partial "head" . }}
+    {{ partial "head" . | safeHTML }}
     <!--  Menu navigation  -->
     <div class="container">
-      {{ partial "header/header.html" . }}
+      {{ partial "header/header.html" . | safeHTML }}
       <div id="content_wrapper">
         <!-- Code that all your templates share, like a header -->
         {{ block "main" . }}
