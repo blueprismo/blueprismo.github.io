@@ -1,14 +1,2 @@
-{{/*
-{{ $style := resources.Get "sass/footer.scss" | resources.ToCSS | resources.Minify }}
-  <link rel="stylesheet" href="{{ $style.Permalink }}"> 
-
-{{ $style := resources.Get "sass/navbar.scss" | resources.ToCSS | resources.Minify }}
-  <link rel="stylesheet" href="{{ $style.Permalink }}">   
-*/}}
-
-<!-- This loop should work, but navbar does not work... may post and work afterwards -->
-{{/*  {{ $CSS := resources.Match "sass/**.scss" | resources.Concat "styles.css" }}
-<link rel="stylesheet" href="{{ $CSS.Permalink }}" media="all">  */}}
-
 {{ $style := resources.Get "sass/main.scss" | resources.ToCSS | resources.Fingerprint }}
-<link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity | default "anonymous" }}">
+    <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity | default "anonymous" }}">

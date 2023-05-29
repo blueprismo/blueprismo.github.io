@@ -1,10 +1,10 @@
 <head>
-    <title>{{ .Params.title }} | {{ .Site.Title }} </title>
-    {{ partial "head/style" . }}
     {{ partial "head/meta" . }}
-    <link rel='canonical' href='{{ .RelPermalink }}' />
+    {{ partial "head/style" . }}
+    <title>{{ .Params.title }} | {{ .Site.Title }} </title>
+    <link rel="canonical" href="{{ .Permalink }}" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     {{- template "_internal/google_analytics.html" . -}}
     {{- template "_internal/google_analytics_async.html" . -}}
-    {{ partial "head/rss" . }}
+    {{- partial "head/rss" . }}
 </head>
