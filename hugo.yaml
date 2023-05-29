@@ -66,4 +66,12 @@ markup:
     tabWidth: 4
     style: monokai
 
+# Keep quotes for name tags and SEO optimisation
+minify:
+  tdewolff:
+    html:
+      keepDocumentTags: true
+      keepQuotes: true
+
+
 enableInlineShortcodes: true
