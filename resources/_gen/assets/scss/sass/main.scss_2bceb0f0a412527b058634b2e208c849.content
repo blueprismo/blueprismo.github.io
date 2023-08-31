@@ -52,6 +52,9 @@ code {
 .post a {
   border-bottom: #8e8e8e 0.15rem dashed; }
 
+#content_wrapper strong {
+  text-decoration: underline; }
+
 header {
   display: flex;
   position: relative;
@@ -152,13 +155,14 @@ code > span {
 
 code {
   background-color: black;
+  color: yellow;
   border-radius: 0.25rem; }
 
 .postmetadata {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around; }
+  justify-content: space-between; }
 
 .readingmetadata {
   display: flex;
@@ -178,22 +182,23 @@ code {
     display: block; } }
 
 #content {
-  text-align: center; }
+  text-align: left; }
 
 #content h1, h2, h3, h4, h5, h6 {
-  text-align: center; }
+  margin: initial;
+  text-decoration: underline; }
 
 #content h1 {
-  font-size: 2.05em; }
+  font-size: 3em; }
 
 #content h2 {
-  font-size: 1.95em; }
+  font-size: 2.05em; }
 
 #content h3 {
-  font-size: 1.60em; }
+  font-size: 1.70em; }
 
 #content h4 {
-  font-size: 1.35em; }
+  font-size: 1.2em; }
 
 #content h5 {
   font-size: 1.20em; }
@@ -206,6 +211,3 @@ code {
   margin-left: auto;
   margin-right: auto;
   width: 50%; }
-
-#content, .post ul, ol {
-  list-style-position: inside; }

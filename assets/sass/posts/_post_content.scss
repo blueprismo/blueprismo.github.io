@@ -1,22 +1,23 @@
 #content {
-    text-align: center;
+    text-align: left;
 }
 
 // Header sizes
 #content h1,h2,h3,h4,h5,h6 {
-    text-align: center;
+    margin: initial;
+    text-decoration: underline;
 }
 #content h1 {
-    font-size: 2.05em;
+    font-size: 3em;
 }
 #content h2 {
-    font-size: 1.95em;
+    font-size: 2.05em;
 }
 #content h3 {
-    font-size: 1.60em;
+    font-size: 1.70em;
 }
 #content h4 {
-    font-size: 1.35em;
+    font-size: 1.2em;
 }
 #content h5 {
     font-size: 1.20em;
@@ -31,9 +32,4 @@
     margin-left: auto;
     margin-right: auto;
     width: 50%;
-}
-
-// Unordered lists appear with the dot at the beggining of the word 
-#content,.post  ul, ol {
-    list-style-position: inside;
 }
