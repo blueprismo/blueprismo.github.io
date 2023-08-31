@@ -77,14 +77,15 @@ The output to the command above is colon-separated, from left to right:
 We are going to play around with our cgroups, my system uses cgroupsv2. 
 ```sh
 # To check which version of cgroups your system is using you can run `grep cgroup /proc/filesystems` 
-# if you got "cgroup2" in the response, you use the v2
-# if you don't have it, you use the v1
+# if you got "cgroup2" in the response, you use the cgroups v2
+# if you don't have it, you use the cgroups v1
 $ grep cgroup /proc/filesystems
 nodev	cgroup
 nodev	cgroup2
 ```
 
 In this occasion we're going to test a simple fibonacci recursive function, suppose we have this python snippet:
+
 ```python
 # fibonacci.py
 def fibonacci(n):
@@ -98,6 +99,8 @@ def fibonacci(n):
 result = fibonacci(35)
 print("Fibonacci result:", result)
 ```
+
+I don't know if a non-techy reader has arrived this far into the reading, but the fibonacci function is one function that calls itself infinitely or until it hits a base case (or base condition) the nice attribute of recursive functions is that they consume stack space for every call (like any other function), what matters is the times this function recurses, in this case we want 35 recursions. **And 35 recursions doesn't necessarily mean number of calls! In our case to get to the 35th number 18.454.929 calls were made!**
 
 #### 1st step
 Now let's create our first cgroup by making a directory.
