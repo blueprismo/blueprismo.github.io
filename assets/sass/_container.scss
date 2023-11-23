@@ -7,13 +7,13 @@
 }
 
 // CODE block
-// Do not overflow codeblocks, allow scroll if length surpasses
-code > span {
-  overflow: scroll;
-}
-// inline, this should be removed!
 code {
   background-color: black;
   color: yellow;
   border-radius: 0.25rem;
+}
+
+// make Code generated blocks scroll when they surpass the boundaries
+.highlight > pre {
+  overflow: scroll;
 }
