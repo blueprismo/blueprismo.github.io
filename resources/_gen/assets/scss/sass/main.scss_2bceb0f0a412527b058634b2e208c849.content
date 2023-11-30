@@ -150,13 +150,13 @@ img {
   flex: 1 auto;
   text-rendering: optimizeLegibility; }
 
-code > span {
-  overflow: scroll; }
-
 code {
   background-color: black;
   color: yellow;
   border-radius: 0.25rem; }
+
+.highlight > pre {
+  overflow: scroll; }
 
 .postmetadata {
   display: flex;
@@ -210,4 +210,4 @@ code {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%; }
+  width: 100%; }
