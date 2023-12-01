@@ -6,7 +6,7 @@ date: "2023-11-30"
 
 # Intro
 In this post we are going to talk about abstract sockets,
-a colleage from work (ty Bill🙏) pointed out this concept, and I didn't knew this concept of socket existed before.
+a colleague from work (ty Bill🙏) pointed out this concept, and I didn't knew this concept of socket existed before.
 
 Abstract sockets have been here for a while (since Linux kernel version 2.3.4), about July 1999.
 
