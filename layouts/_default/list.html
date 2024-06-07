@@ -1,10 +1,10 @@
 {{ define "main" }}
 <div class="list">
   {{ range .Pages.GroupByDate "2006" }}
-  <h1>{{ .Key }}</h1>
+  <h1 class="yearlist">{{ .Key }}</h1>
 
     {{ range .Pages }}
-    <div>
+    <div class="postlist">
       <a href="{{ .RelPermalink }}" aria-label="{{ .Summary }}" >{{ .Title }}</a><br/>
       <div class="meta">{{ .Date.Format "02-01-2006" }}</div>
        {{ .Summary }}
