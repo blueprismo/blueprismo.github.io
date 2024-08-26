@@ -6,10 +6,11 @@ date: "2024-08-25"
 
 # Intro
 
-In this post I am going to explain some basics about kubernetes and set up a cluster in a quick manner.
-For this purpose I will use `kubeadm`, `kubectl` and `kubelet`. As this approach provides a more realistic production environment.
+In this post I am going to explain some basics about kubernetes and set up a cluster in a quick manner.  
+For this purpose I will use `kubeadm`, `kubectl` and `kubelet`. As this approach provides a more realistic production environment.  
+
 There are other tools like `microk8s`, `k3s` or `kind`, but IMO quite simplistic.
-I will use Kubernetes v1.31.0 as it's the latest one (released: 2024-08-13)
+I will use Kubernetes **v1.31.0** as it's the latest one (released: 2024-08-13)
 
 ## Prerequisites
 
@@ -44,7 +45,7 @@ The main goal is to initialize a cluster, with `kubeadm init` the following happ
 
 ![kubeadm_arch](kubeadm_arch.png)
 
-1. When you initialize kubeadm, first it runs all the preflight checks to validate the system state and it downloads all the required cluster container images from the **registry.k8s.io** container registry.
+1. When you initialize kubeadm, first it runs all the preflight checks to validate the system state and it downloads all the required cluster container images from the **registry.k8s.io** container registry. Of course you can also download and refer custom docker images!
 2. It then generates required TLS certificates and stores them in the **/etc/kubernetes/pki** folder.
 3. Next, it generates all the kubeconfig files for the cluster components in the **/etc/kubernetes** folder.
 4. Then it starts the kubelet service and generates the static pod manifests for all the cluster components and saves it in the **/etc/kubernetes/manifests** folder.
@@ -59,7 +60,7 @@ Our goal with this step is to have the `etcd`, `api-server`, `scheduler` and `co
 ### Pod Network Plugin
 
 For pods to be able to communicate with each other, we need a Network plugin, ideally from [this list](https://kubernetes.io/docs/concepts/cluster-administration/addons/#networking-and-network-policy).
-There is an awesome lecture you can find in: <https://mvallim.github.io/kubernetes-under-the-hood/documentation/kube-flannel.html>
+There is an awesome lecture you can find in: <https://mvallim.github.io/kubernetes-under-the-hood/documentation/kube-flannel.html> that talks about the internals of Flannel, a simple Pod Network plugin, that allows our pods to communicate between nodes in the cluster. Even if those servers are in different data-centers.
 
 We need a CNI based Pod network add on otherwise Cluster DNS (CoreDNS) will not start up before a network is installed.
 
@@ -87,7 +88,7 @@ After running `kubeadm init --pod-network-cidr 10.244.0.0/16` we should have a m
 We will reference our KUBECONFIG file for kubectl to be able to interact with the Kubernetes API
 `export KUBECONFIG=/etc/kubernetes/admin.conf`
 
-This means our bootstapping in the picture has been done. Make sure you have all the containers running except the coredns ones. coredns ones are waiting for you to connect a Pod Network plugin!
+This means our bootstapping in the first picture has been done. Make sure you have all the containers running except the coredns ones. coredns ones are waiting for you to connect a Pod Network plugin!
 
 ```bash
 $ kubectl get pods -n kube-system
@@ -197,7 +198,7 @@ metadata:
   namespace: metallb-system
 spec:
   addresses:
-  - X.X.X.X/32
+  - X.X.X.X/32  # Replace with Addresses that you are going to expose.
   - 37.27.33.117/32
 
 ---
@@ -210,7 +211,8 @@ metadata:
 
 And `kubectl apply -f metallb.yaml`
 
-We will see that the metallb-controller and metallb-speaker are running. At this point, we could access our kubernetes services by it's public-facing IPs, but what's the point on that? It is much better to use ingresses! For this reason we are going to deploy the Ingress controller. Which will act as our gateway for the kubernetes microservices.
+We will see that the metallb-controller and metallb-speaker are running. At this point, we could access our kubernetes services by it's public-facing IPs, but what's the point on that? It is much better to use ingresses!  
+For this reason we are going to deploy the Ingress controller. Which will act as our gateway for the kubernetes microservices.
 `helm install nginx --create-namespace -n nginx-ingress oci://ghcr.io/nginxinc/charts/nginx-ingress --version 1.3.2`
 
 ### Deploy a simple app
@@ -302,3 +304,5 @@ This was one way to see the core components in the kubernetes environment. In a 
 6. POD Network addon: For our pods to be able to talk to each other, in this case Flannel, but could be other ones like [calico](https://www.tigera.io/project-calico/)
 
 We also see that the ingresses are about to have one successor: [Gateway API](https://gateway-api.sigs.k8s.io/), which I may post in the future about.
+
+It's late in the night, hope that you have enjoy the read! time to have a deep rest :heart::zzz:
