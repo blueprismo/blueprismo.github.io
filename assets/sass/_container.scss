@@ -11,6 +11,7 @@ code:not([data-lang]) {
   background-color: #002b36;
   color: #2aa198;
   border-radius: 0.25rem;
+  overflow-wrap: break-word;
 }
 
 // make Code generated blocks scroll when they surpass the boundaries
