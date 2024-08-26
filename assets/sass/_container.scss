@@ -7,9 +7,9 @@
 }
 
 // CODE block
-code {
-  background-color: black;
-  color: yellow;
+code:not([data-lang]) {
+  background-color: #002b36;
+  color: #2aa198;
   border-radius: 0.25rem;
 }
 

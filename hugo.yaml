@@ -7,7 +7,7 @@ copyright: "© Blueprismo"
 enableRobotsTXT: true 
 
 params:
-  prompt: "# Blueprismo"
+  prompt: "Blueprismo"
   social:
   - name: Github
     image: /images/socials/github.svg
@@ -64,6 +64,6 @@ markup:
     noClasses: true
     noHl: false
     tabWidth: 4
-    style: monokai
+    style: solarized-dark
 
 enableInlineShortcodes: true

@@ -3,18 +3,59 @@
 }
 
 body {
-  margin: 0;
+  margin: auto;
   padding: 0;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
   background-color: #1b1c1e;
   color: #d2d2d2;
+  -webkit-font-smoothing: antialiased;
+  min-height: 97vh;
+  font-weight: 300;
+  animation: fadeIn .36s;
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0}
+  20% {opacity: 0}
+  100% {opacity: 1}
+}
+@-moz-keyframes fadeIn {
+  0% {opacity: 0}
+  20% {opacity: 0}
+  100% {opacity: 1}
+}
+@-webkit-keyframes fadeIn {
+  0% {opacity: 0}
+  20% {opacity: 0}
+  100% {opacity: 1}
+}
+@-o-keyframes fadeIn {
+  0% {opacity: 0}
+  20% {opacity: 0}
+  100% {opacity: 1}
+}
+@-ms-keyframes fadeIn {
+  0% {opacity: 0}
+  20% {opacity: 0}
+  100% {opacity: 1}
 }
 
 html {
-  letter-spacing: .06em;
-  line-height: 1.7;
+  letter-spacing: .05em;
+  //line-height: 1.4;
+}
+
+@media only screen and (min-width: 850px) {
+    body { font-size: 1.15em }
+    html { line-height: 1.4 }
+}
+
+@media only screen and (max-width: 850px) {
+    body {
+        font-size: 4vw
+    }
 }
 
 /* Must be loaded before everything else */
@@ -29,3 +70,6 @@ html {
 @import "posts/post_metadata";
 @import "posts/post_content";
 @import "postlist";
+
+
+// inspi: https://simondalvai.org/blog/solo-gamedev-blog/
