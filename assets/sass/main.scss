@@ -48,14 +48,18 @@ html {
 }
 
 @media only screen and (min-width: 850px) {
-    body { font-size: 1.15em }
-    html { line-height: 1.4 }
+  body { font-size: 1.15em }
+  html { line-height: 1.4 }
 }
 
 @media only screen and (max-width: 850px) {
-    body {
-        font-size: 2em
-    }
+  body {
+    font-size: 2em;
+    overflow-wrap: break-word;
+  }
+  .logo_text {
+    display: none;
+  }
 }
 
 /* Must be loaded before everything else */
