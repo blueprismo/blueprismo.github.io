@@ -46,6 +46,7 @@ Feel free to follow both guides in parallel
 2. https://docs.github.com/en/actions/security-for-github-actions/security-hardening-your-deployments/configuring-openid-connect-in-amazon-web-services#adding-the-identity-provider-to-aws
 
 Once we have configured our OIDC provider, and set the right audience (the Audience is the consumers of the github-generated JWT, in this case `sts.amazonaws.com`) we will see our Identity Provider like this in AWS.
+
 ![IAM](image-2.png)
 
 Then we can create a role, in this example `GithubRunners`, in this role we will attach the permissions that our pipelines need. Usually push permissions to ECR, but could be upload a file to S3 or whatever suits your needs.
@@ -106,6 +107,8 @@ It is recommended to use the official action, and of course pin it to a version/
 ```
 
 And that's all you need. Ooofff how many things and I am a lazy bastard. Isn't this already in a terraform module?
+
+![lazy_bastard](image-4.png)
 
 ## TL;DR
 
