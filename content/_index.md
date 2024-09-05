@@ -5,8 +5,7 @@ date: "2023-04-20"
 
 # Enin Kaduk
 
-Proud shower singer, dad to 0 sons.
-
+Proud shower singer, dad to 0 sons.  
 
 [comment]: # (Socials with svg inline)
 
