@@ -12,6 +12,8 @@ Today I'm going to talk about web sockets, you may have found `wss://` or `ws://
 
 ## What are web Sockets?
 
+WebSocket is a realtime technology that enables bidirectional, full-duplex communication between client and server over a persistent, single-socket connection. Like two yoghurt connected to one string thing.
+
 WebSockets are widely used in modern web applications. They are initiated over HTTP and provide long-lived connections with asynchronous communication in both directions.
 WebSockets are used for all kinds of purposes, including performing user actions and transmitting sensitive information. Virtually any web security vulnerability that arises with regular HTTP can also arise in relation to WebSockets communications.
 
