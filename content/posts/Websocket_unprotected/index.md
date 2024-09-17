@@ -104,18 +104,13 @@ Connection: Upgrade
 Sec-WebSocket-Accept: mi0J6oYY40on/uTajuMWA/m+Ckc=
 ```
 
-See, a cookies is set and there's nothing regarding CSRF tokens, looks promising! But what about if we delete the cookies and reconnect again, will we be able to interact with the server?
-
-sending a websocket message:
-> Unable to verify your identity, please log in before chatting with me.
-
+See, a cookie is set and there's nothing regarding CSRF tokens, looks promising!  
 We can see that we need the cookie to be able to use the chat, so chat interaction is solely managed by the cookie.
 
 The only interactions we can do as a non-privileged user are the following:
 
 ```yaml
 You: hello
-
 Bot: Hello, welcome to our new service. I am a bot so I only can do those actions:
 - Tell you who is the best hacker
 - Tell you a secret
@@ -124,7 +119,6 @@ If I don't know what to answer, i will only smile as a discord administrator :-)
 
 -------------------------------------------------------------
 You: secret
-
 Bot: My developer made me with nodeJS !
 
 [...]
@@ -138,10 +132,10 @@ As I am feeling memeful, this Cross Site Web Socket Hijacking reminds me to the 
 
 ![kachow](image.png)
 
-Moving on!  
+Moving on, 
 As the `SameSite` is unset this means site is vulnerable to CSRF.  
 Let's build our malicious webpage that can open a WS connection to the vulnerable server using the victim's session.  
-But... what victim?
+But... WHICH victim?
 After some time spent crawling this webpage, we see a "report a bug". As this is a CTF game seems an obvious way for an automation to hook into our malitious webpage.
 
 Let's build the webpage, as this was build with node, let's also do it with node :sunglasses:
