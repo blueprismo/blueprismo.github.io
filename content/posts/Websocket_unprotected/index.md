@@ -132,11 +132,11 @@ As I am feeling memeful, this Cross Site Web Socket Hijacking reminds me to the 
 
 ![kachow](image.png)
 
-Moving on, 
-As the `SameSite` is unset this means site is vulnerable to CSRF.  
+Moving on,
+as the `SameSite` cookie attribute is unset this means site is potentially vulnerable to CSRF.  
 Let's build our malicious webpage that can open a WS connection to the vulnerable server using the victim's session.  
-But... WHICH victim?
-After some time spent crawling this webpage, we see a "report a bug". As this is a CTF game seems an obvious way for an automation to hook into our malitious webpage.
+But... **WHICH** victim?
+After some time spent crawling this webpage, we see a "report a bug" page. As this is a CTF game seems an obvious way for an automation to hook into our malitious webpage.
 
 Let's build the webpage, as this was build with node, let's also do it with node :sunglasses:
 
