@@ -11,7 +11,12 @@
         </div>
     </section>
     <article id="content">
-      {{ .Content }}
+      {{- with .Content -}}
+      <div>
+        {{ . | replaceRE `(<h[1-9] id="([^" ]+)">)(.+)(</h[1-9]>)` `${1}<a href="#${2}" class="hanchor" aria-label="Anchor">
+           ${3} ${4}</a>` | safeHTML }}
+      </div>
+      {{- end -}}
     </article>
   </div>
 </section>
