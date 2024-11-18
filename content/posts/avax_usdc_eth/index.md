@@ -13,21 +13,24 @@ If you've experienced the burden of going through a mortgage process, then you k
 
 Back in the day I staked some little JOEs in a pool, it ain't much, but it was around 70-80 Eur that I just drop there. When the mortgage came, it was time for me to get them out with some little reward of 38.5 USDCs only to stake those tokens.
 
-For the curious ones, I'm going to explain this little journey into the crypto-transactions. Take it as a casual conversation in front of the coffee machine, or as an anechdotal chronicle.
+For the curious ones, I'm going to explain a little joruney into cryptocurrency transactions, specifically to bridge tokens.
+Bridging a token means to change it from one network to another.
 
-The objective is centralize some tokens into my Ethereum network, with a stablecoin (USDC in my case), to help my mortgage payment.
+Take this as a casual conversation in front of the coffee machine, or as an anechdotal chronicle.
+
+The objective is to centralize some tokens into my Ethereum network, with a stablecoin (USDC in my case), to help my mortgage payment.
 Centralizing the decentralized stuff, heh...!
 
 ## Step 1: Unstake
 
-My origin tokens (JOE), are staked in the [joe's staking platform](https://lfj.gg/avalanche/stake/sjoe) which have a yearly APR of 11%, quite high!
+The tokens in my origin wallet are in the Avalanche network, these tokens are called JOE and are staked in the [joe's staking platform](https://lfj.gg/avalanche/stake/sjoe) which have a yearly APR of 11%, quite high!
 The APR is the Annual Percentage Rate, which is on average the expected benefit you will get from staking your tokens. If you are a revolut user, it's the same as having a savings account
- with the little difference of compounding, TL;DR: Your expected benefit is fixed with APR, while the benefit grows automatically with APY.
+ with the little difference of compounding, TL;DR: Your expected benefit is fixed with APR, while the benefit grows "automatically" with APY.
 
-All the transactions in the networks are public: not anonymous but "pseudonymous". Meaning any person can see all the transactions in the network, from the addressess of the wallets, contracts, etc.
+All the transactions in the networks are public: not anonymous but "pseudonymous". Meaning any person can see all the transactions in the network, from the addressess of the wallets, but not their real names.
 I will share the transactions I've made with you dear reader so you can see them aswell.
 
-Before moving anything, I claim my 38.5 USDC token as a reward of having used that coin:
+Before unstaking any token, I claim my 38.5 USDC token as a reward of having used that coin:
 https://snowscan.xyz/tx/0x39b656ab5d7831e8652318094573164a5c0e39acf0754745003cb5ea70006fd8
 
 Then I unstake all my joes thanks to this transaction:
@@ -36,16 +39,16 @@ https://snowtrace.io/tx/0x91778a7fde5fa0a2d80661f355d080491fdeb7795e25dea966bd7d
 ## Step 2: Token swap
 
 I am aiming to swap the JOE token to USDC, the first operation needed to acheive this swap is the token validation.
-The DEX's smart contract (in this case traderjoe) needs permission to "spend" my tokens, this is a one-time operation per token-contract pair.
-The approval transaction doesn't transfer funds: it just updates the blockchain to allow the smart contract to use a specific amount of your tokens!
+The DEX's smart contract (in this case traderjoe) needs permission to "spend" my tokens, this is a one-time operation per token-contract pair (JOE to USDC in this case).
+This transaction doesn't transfer funds: it just updates the blockchain to allow the smart contract to use a specific amount of your tokens!
 https://snowtrace.io/tx/0x1ff84284be8e142b0096a9c9f0d191a6e37cb7d5630c09ca185c980a592cc1c3
 
-Then we do the actual token swap in the following transaction:
+Then we do the actual token swap in the approval swap transaction:
 https://snowtrace.io/tx/0x702e0485196a8af627e9d9c54659006de2dcd38afbb87873d8f1460c7656c3aa
 
-## Step 3: USDC from the Avalanche network to USDC in Ethereum network
+## Step 3: [USDC - Avalanche] to [USDC - Ethereum]
 
-This is the funny operation
+This is the funny operation where we bridge:
 https://snowtrace.io/tx/0x184afe58fa76fa7d133d8ff56beed2b24890ba525e8cb50d72f9a385258f9013
 
 If we tear down this operation, we can see 6 sub-operations:
@@ -70,6 +73,6 @@ And of course, we can see the transaction in the Ethereum network where the toke
 Notice that this service (etherscan) scans the whole Ethereum network.
 https://etherscan.io/tx/0x177e69ac641e6177e64cf07243e6e7671c796f3055a855c8384143cb56c6e1ed
 
-That's it for today! Soon will become a landlord :D
+That's it for today,
 
 Enjoy your night!
