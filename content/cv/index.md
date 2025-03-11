@@ -8,7 +8,7 @@ tags: CV, curriculum, knowledge
 
 Updated 27 May 2023
 
-## 2023
+## 2023 - Today
 🛠️Currently at [Xentral](https://xentral.com/) - SRE/DevOps Engineer & Chief Emoji Officer (Berlin/Remote)  
 
 ## 2022

@@ -16,7 +16,9 @@
   padding: 0% 15%;
 }
 
-#content_wrapper blockquote p {
+#content_wrapper blockquote {
+  border-left: 0.25rem solid #ccc; 
+  padding-left: 1rem;
   font-style: italic;
 }
 

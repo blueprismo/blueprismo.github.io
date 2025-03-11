@@ -4,11 +4,6 @@
 ## Benchmarking the support of Markdown with a comprehensive checklist
 
 
-**You're working on a project featuring Markdown?**
-
-Drop [the source of this page](https://raw.githubusercontent.com/RoneoOrg/markdown/main/README.md) wherever you want to test *or showcase* the support of Markdown, and check that every single feature is properly rendered.
-
-
 **Table of Contents**
 
 - [Basic formatting](#basic-formatting)
