@@ -22,7 +22,7 @@ In short, our steps should be as follows:
 3. Perform a hot-backup with percona xtrabackup for an initial dump.
 4. Stream upload the backup to an s3 bucket.
 5. Upload credentials in hashicorp vault.
-6. Deploy an application template in argoCD.
+6. Deploy a helm chart
 7. Instruct the replica to use the origin as the replication data source and to use auto-positioning.
 
 ## Hands on
@@ -66,7 +66,35 @@ mysql> describe mysql.gtid_executed;
 | interval_start | bigint   | NO   | PRI | NULL    |       |
 | interval_end   | bigint   | NO   |     | NULL    |       |
 +----------------+----------+------+-----+---------+-------+
+
+-- let's create a replication user for replication purposes:
+CREATE USER IF NOT EXISTS 'replication'@'%' IDENTIFIED WITH mysql_native_password BY 'testpassw0rd!';
+GRANT REPLICATION SLAVE, REPLICATION_SLAVE_ADMIN, REPLICATION CLIENT ON *.* TO 'replication'@'%';
+-- we don't need to flush privileges since we used the `GRANT` keyword ;)
+
 ```
+
+### Step 2: Set VPC peering connection
+
+Setting a VPC peering connection is quite straightforward, the goal is to connect two isolated networks, so we need to write down the CIDRs of each network, and then modify the route tables to allow traffic between them.
+We have ACCOUNT_A vpc with:
+`10.20.x.x/16` network
+
+We have ACCOUNT_B vpc with:
+`10.10.x.x/16` network
+
+If we want traffic to flow between the networks, we will need to set the following route table rules:
+
+| Route table           | Destination             | Target |
+| --------------------- | ----------------------- | ------ |
+| VPC A                 | `VPC A (10.20.x.x/16)`  | Local  |
+| `VPC B 10.10.x.x/16`  | pcx-`11112222`          |        |
+| VPC B                 | `VPC B 10.10.x.x/16`    | Local  |
+| `VPC A 10.20.x.x/16`  | pcx-`11112222`          |        |
+
+VPC peering has been done, now we can ensure the origin DB and the replica can have a streaming connection.
+
+### Step 3: Perform a hot backup with percona xtrabackup
 
 Once the origin server is configured, we can make an initial dump with percona xtrabackup.
 The documentation specifies to use xbcloud binary to upload data directly into s3, but as I want a single compressed file I will do it on my own, a single compressed file is easier to handle as it's only one object, you can access it's metadata without any additional requests and it simplifies streamlining the process.
@@ -82,8 +110,10 @@ docker run --rm --name pxb -it --user root \
 
 After this dump, we are going to upload it into a new s3 bucket just in case we would like to streamline this process and automate it. To do so we will upload a policy into the instance profile of our ec2 instance.
 
+### Step 4: Cross-account bucket access
+
 After this, we need to ensure this s3 bucket from our account has access from the destination account where our EKS cluster will be.
-In order to quickly and dirty prepare cross-account access to our s3 bucket only for download (read) we will need this policy:
+In order to quickly and dirty prepare cross-account access to our s3 bucket for download (readonly) we will need this policy:
 
 ```json
 {
@@ -118,7 +148,7 @@ We can test so with simple commands locally:
 download: s3://bucket_a/testfile to ./testfile
 ```
 
-But we want to access them through kubernetes, therefore IRSA comes into the game, with the following policy:
+But we want to access them through kubernetes, therefore [IRSA](https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html) comes into the game, with the following policy:
 
 ```json
 ### Main policy 
@@ -156,7 +186,65 @@ But we want to access them through kubernetes, therefore IRSA comes into the gam
 }
 ```
 
-### Set up helm chart
+We will name the role `irsa_role_db_replication` and attach the policies created above.
+
+Now we can add the `eks.amazonaws.com/role-arn: "arn:aws:iam::account_B:role/irsa_role_db_replication"` annotation into our service account so our kubernetes resources can use AWS services (in this case read from an S3 bucket).
+
+### Step 5: Upload credentials in hashicorp vault
+
+To populate the vault, I have created a user, and use the API to authenticate and upload the values.
+With Ansible, this would be a two-step operation:
+
+```yaml
+- name: Log into vault (http)
+  shell: |
+    curl --request POST --connect-timeout 5 \
+    --data '{"password": "{{ vault.password }}"}' \
+    https://{{ vault.url }}/v1/auth/userpass/login/{{ vault.user }} | jq -r .auth.client_token
+  no_log: true
+  register: token
+
+- name: Send payload to vault
+  no_log: true
+  shell: |
+    curl -X POST -H "X-Vault-Token: {{ token.stdout }}" \
+    -H "Content-Type: application/json" \
+    -d '{"data":
+      {"SOURCE_HOST_IP":"{{ local_ipv4 }}",
+        "DB_REPLICATION_USER": "{{ db.replication_user }}",
+        "DB_REPLICATION_PASSWORD":"{{ db.replication_password }}",
+        "DB_USERNAME": "{{ db.username }}",
+        "DB_PASSWORD": "{{ db.password }}"
+      }}' \
+    https://{{ vault.url }}/v1/{{ vault.db_replication_kv_path }}/{{ serial }}
+```
+
+this user is only used with the ansible playbook to populate the vault, it has capabilities only to populate the `kv/db_replication/$DATABASE` path.
+
+In order to use vault injector for our kubernetes workloads, we will have a role.
+The authPath for the role will be determined by our kubernetes access in vault, in my case I have:
+`auth/kubernetes-test-cluster/role/db_replication`
+
+And the policy attached to the role is:
+
+```json
+path "kv/data/db_replication/*" {
+  capabilities = ["read", "list"]
+}
+path "secret/metadata/*" {
+  capabilities = ["read", "list"]
+}
+path "auth/kubernetes-test-cluster/role/*" {
+  capabilities = ["read", "list","create", "update"]
+}
+path "auth/kubernetes-test-cluster/db_replication/login" {
+  capabilities = ["create", "update"]
+}
+```
+
+Our vault setup is ready! We can now begin to deploy our kubernetes resources
+
+### Step 6: Set up helm chart
 
 A helm chart will be deployed with the following containers
 ![helm_chart](helm_chart.png)
@@ -248,6 +336,8 @@ And that was yet another task in a day of an SRE/DevOps/OneManArmy. The learning
 - Post-install helm hooks run always after installation, they are reckless and do not care about init processes
 - `/dev/tcp` may be handy in containers without standard network tools
 - S3 buckets cross account replication
+- How to authenticate in vault via HTTP
+- Make a VPC peering connection
 - IRSA is (IMHO) still better than EKS Pod Identity
 
 Hope you have a great one! Remember to seek mental peace :lotus_position:
