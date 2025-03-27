@@ -6,11 +6,17 @@ date: "2025-03-27"
 
 # Intro
 
-Let's write about 0 downtime database movements, let's say we want to streamline a process to move a database (mysql) from an ec2 instance to a kubernetes cluster in another AWS account. Without downtime.
+Let's write about 0 downtime database movements, let's say we want to streamline a process to move a database (mysql) from an ec2 instance to a kubernetes cluster in another AWS account. Without a single second of downtime.
 
 I will use GTIDs just for the fun sake of it. Let's always [RTFM](https://dev.mysql.com/doc/refman/8.0/en/replication-gtids-howto.html)
 
-I have this initial state:
+Global Transaction IDs are a way to ensure consistency when mirroring a database. For every transaction in the origin (master) database, a global identifier is written in the binary log of that database. Binary logs (or the binlog table) store the actual transaction data. They are not mutually exclusive with the binlogs, they are complementary.  
+
+In other words:
+Binlog can exist without GTID mode.
+GTID mode cannot exist without Binlog.
+
+Let's say we have this initial state:
 ![ec2_instance](ec2_instance.png)
 
 ## TLDR
