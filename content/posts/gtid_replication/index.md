@@ -1,7 +1,7 @@
 ---
 title: GTID replication
 Summary: Creating some replication between databases.
-date: "2025-03-20"
+date: "2025-03-27"
 ---
 
 # Intro
@@ -325,7 +325,7 @@ After the replication has been done, we would have something like this:
 
 And of course, as we had in mind streamlining the whole process with Ansible, we can then add our own microservice (like an instance-manager) to control the lifecycle of the instances:
 
-![instance_manager](image.png)
+![instance_manager](instance_manager.png)
 
 In some future steps, we can prepare some other automation to swap the master and the replica roles.
 
