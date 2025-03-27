@@ -17,4 +17,8 @@ code:not([data-lang]) {
 // make Code generated blocks scroll when they surpass the boundaries
 .highlight > pre {
   overflow: scroll;
+  
+  // If I want wrap instead of scroll uncomment this:
+  //overflow-wrap: break-word;
+  //white-space: pre-wrap; /* Allow wrapping inside code block */
 }
