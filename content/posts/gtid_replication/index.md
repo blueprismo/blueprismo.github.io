@@ -77,6 +77,7 @@ GRANT REPLICATION SLAVE, REPLICATION_SLAVE_ADMIN, REPLICATION CLIENT ON *.* TO '
 ### Step 2: Set VPC peering connection
 
 Setting a VPC peering connection is quite straightforward, the goal is to connect two isolated networks, so we need to write down the CIDRs of each network, and then modify the route tables to allow traffic between them.
+
 We have ACCOUNT_A vpc with:
 `10.20.x.x/16` network
 
@@ -96,7 +97,7 @@ VPC peering has been done, now we can ensure the origin DB and the replica can h
 
 ### Step 3: Perform a hot backup with percona xtrabackup
 
-Once the origin server is configured, we can make an initial dump with percona xtrabackup.
+Once the origin server is configured, we can make an initial dump with percona xtrabackup.  
 The documentation specifies to use xbcloud binary to upload data directly into s3, but as I want a single compressed file I will do it on my own, a single compressed file is easier to handle as it's only one object, you can access it's metadata without any additional requests and it simplifies streamlining the process.
 
 ```bash
@@ -192,7 +193,7 @@ Now we can add the `eks.amazonaws.com/role-arn: "arn:aws:iam::account_B:role/irs
 
 ### Step 5: Upload credentials in hashicorp vault
 
-To populate the vault, I have created a user, and use the API to authenticate and upload the values.
+To populate the vault, I have created a vault user, and use the API to authenticate and upload the values.
 With Ansible, this would be a two-step operation:
 
 ```yaml
