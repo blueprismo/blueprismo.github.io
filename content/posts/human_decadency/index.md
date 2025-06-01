@@ -75,6 +75,18 @@ As 2B would say
 
 It is a pitty the lack of information provided in some interviews, luckily worth is measured with kindness for me, so that is alright.
 
+## Contentful
+
+Contentful is a headless CMS, I did the interview while climbing in the forest, the interviewer, Andreea Tilvan was very comprehensive, the conversation was smooth and it was that: a conversational interview. Sadly she told me there was one person further than me in the process, and that person got the job, lucky him/her. Either way the intervirew was cool!
+
+## Elastic
+
+This interviewer, Ferran San Millan, was also from near my hometown (Girona) and we did half of the interview in Catalan. Sadly the position was quickly fulfilled before I could do any code or skills test. It killed me the vague hope in regards of getting hired.
+
+## Docker
+
+Damn, Docker is one technology I trully love, my first interview was with Gauri Razdan, a wonderful woman based in California. The interview was at the end of my european day on a Friday. The talk was smooth, and the destination for the project is Docker DHI (Docker Hardened Images), they look for a stereotypical devops role, a fellow that knows in all sectors. I think I could be a great fit! Let's see how it goes.
+
 ## Conclusions
 
 Instead of blaming the world from a mysanthropist point of view, It would be really nice if interview processes had:
