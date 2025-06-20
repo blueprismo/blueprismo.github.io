@@ -2,6 +2,7 @@
 title: Stupid requests
 Summary: Recopilation of anecdotical, stupid, nonsense or misleading requests from people working in the IT sector
 date: "2025-03-27"
+draft: true
 ---
 
 # Intro

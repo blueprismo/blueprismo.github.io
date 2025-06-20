@@ -1,7 +1,7 @@
 ---
 title: Decaying human interactions
 Summary: Some anecdotical event that happened somewhere, at some time, regarding human interactions.
-date: "2025-01-10"
+date: "2025-06-20"
 ---
 
 # Job offers disclaimer
@@ -56,7 +56,7 @@ They were trying to fulfill a position for a "Sovereign Cloud in Europe", the pr
 ![Answers](https://media.tenor.com/4gNl4Vkm0wMAAAAM/dodge-the-matrix.gif)
 All the answers were ambiguous, unclear or rejected (which I interpret as lack of transparency or knowledge)
 
-Then we jumped into a scripting test, as I never use any chatGPT or google dork during the interview because the first person who I would be fooling is not the interviewer but me, the following result came out the question "Write a script that pings all hosts in X subnet, bonus points if you log the results".
+Then we jumped into a scripting test, the following result came out the question "Write a script that pings all hosts in X subnet, bonus points if you log the results".
 
 My train of thought was exposed in the comments, as I exposed my interviewer if I was allowed to do so:
 
@@ -77,15 +77,28 @@ It is a pitty the lack of information provided in some interviews, luckily worth
 
 ## Contentful
 
-Contentful is a headless CMS, I did the interview while climbing in the forest, the interviewer, Andreea Tilvan was very comprehensive, the conversation was smooth and it was that: a conversational interview. Sadly she told me there was one person further than me in the process, and that person got the job, lucky him/her. Either way the intervirew was cool!
+Contentful is a headless CMS, I did the interview while climbing in the forest, the interviewer, Andreea Tilvan was very comprehensive, the conversation was smooth and it was that: a conversational interview. Sadly she told me there was one person further than me in the process, and that person got the job, lucky him/her! Either way the intervirew was cool, I felt like this:
+![guiding others to a tresure I cannot posses](guiding_others.gif)
 
 ## Elastic
 
-This interviewer, Ferran San Millan, was also from near my hometown (Girona) and we did half of the interview in Catalan. Sadly the position was quickly fulfilled before I could do any code or skills test. It killed me the vague hope in regards of getting hired.
+This interviewer, Ferran San Millan, was also from near my hometown (Girona) and we did half of the interview in Catalan. Sadly the position was quickly fulfilled before I could do any code or skills test. It killed me the vague hope in regards of getting hired. Nevertheless, he seemed a friendly guy that takes importance into listening to people.
 
 ## Docker
 
 Damn, Docker is one technology I trully love, my first interview was with Gauri Razdan, a wonderful woman based in California. The interview was at the end of my european day on a Friday. The talk was smooth, and the destination for the project is Docker DHI (Docker Hardened Images), they look for a stereotypical devops role, a fellow that knows in all sectors. I think I could be a great fit! Let's see how it goes.
+
+Interview #2 was a bit disastrous, there was a graphql exercise which I admitted it's been a while since I don't tamper with it, and couldn't finish on time. I punish myself and the voices in my head tell me bad things, luckily there is a third interview tomorrow. The guy was very comprehensive and empathetic. Kudos for his human behaviour <3
+
+![stressed](stress.gif)
+
+Interview #3 was pure poetry. The exercise given was smoothly done, with some quick stackoverflow help for some bash syntax tips. No GPTs or generated crap, all from carbon-based intelligence. After the test we had a casual chat. I admitted not knowing about provenance files in detail, and being ignorant in some other topics.
+
+Interview #4 was with an Engineering Manager. That man was with the big players, he told me he worked with the creator of [SpringBoot](https://spring.io/projects/spring-boot) and he's been more than 20 years in business (I'm 26 as the time of writing this, so that puts some perspective). Talk was very conversational, he even knew the place I grew on as he was a biker aswell.
+
+Interview #5 was with a VP of Product. An american programmer that shifted into the "political role" because he experienced shitty Project Managers in his life, and just wanted to make the engineers not experience that pain. Mad respect 🫡 I felt the time was limited and would have loved to talk more with him. After this... silence, they would provide a final conclusion by end of week.
+
+![yay](yayy.gif)
 
 ## Conclusions
 
