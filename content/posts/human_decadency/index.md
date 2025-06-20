@@ -117,7 +117,7 @@ The job offer is here! I am excited to announce I will join Docker in my next ca
 Instead of blaming the world from a mysanthropist point of view, It would be really nice if interview processes had:
 
 1. More human touch, not being a chunk of memory always in-transit
-2. Honest feedback, companies claim to forest transparency, but lack at provide interview feedback or salary ranges (luckily this will be solved in EU by european parliament (UE) 2023/970)
+2. Honest feedback, companies claim to forest transparency, but lack at provide interview feedback or salary ranges (luckily this will be solved in EU by european parliament [(UE) 2023/970](https://eur-lex.europa.eu/eli/dir/2023/970/oj/eng))
 3. Empathy, everybody have bad days. Understanding this can bring interviewers a step closer to being human
 4. Babysitting the process. There are millions of candidates and attenting on time the scheduled calls is a very good idea.
 
