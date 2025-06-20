@@ -82,7 +82,17 @@ Contentful is a headless CMS, I did the interview while climbing in the forest, 
 
 ## Elastic
 
-This interviewer, Ferran San Millan, was also from near my hometown (Girona) and we did half of the interview in Catalan. Sadly the position was quickly fulfilled before I could do any code or skills test. It killed me the vague hope in regards of getting hired. Nevertheless, he seemed a friendly guy that takes importance into listening to people.
+This interviewer, Ferran San Millan, was also from near my hometown (Girona) and we did half of the interview in Catalan. Sadly the position was quickly fulfilled before I could do any code or skills test. It killed me the vague hope in regards of getting hired.
+
+Nevertheless, he is a friendly guy that takes importance into listening to people. Enjoyed the time with him!
+
+## n8n
+
+N8n is a "no-code" platform for automating stuff, seems a cool open source project which is very very trendy nowadays.
+
+Did a couple of rounds, I really enjoyed the technical interview, the setting was a game of cards where it represented a circular graph of 6 kings. Each king having some "score/life" points that were subtracted through a dice roll.
+
+I tend to express my train of thought while doing the exercise, and I was back and forth quite a lot, that insecurity made me loose some time and clarity towards bringing a solution. The examinator smelled that, and maybe that is the reason I finally got rejected. Overall the exercise was one of the funniest I ever did in an interview, I like how playful it was.
 
 ## Docker
 
