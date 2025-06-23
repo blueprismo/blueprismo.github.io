@@ -52,11 +52,25 @@ table, th, td {
 }
 
 @media only screen and (min-width: 850px) {
+  #content_wrapper {
+    flex: 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0% 10%;
+  }
   body { font-size: 1.25em }
   html { line-height: 1.45 }
 }
 
 @media only screen and (max-width: 850px) {
+  #content_wrapper {
+    flex: 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0% 5%;
+  }
   body {
     font-size: 1.3em;
     overflow-wrap: break-word;

@@ -106,12 +106,13 @@ Damn, Docker is one technology I trully love, my first interview was with Gauri 
 
 **Interview #4** was with an Engineering Manager. That man was with the big players, he told me he worked with the creator of [SpringBoot](https://spring.io/projects/spring-boot) and he's been more than 20 years in business (I'm 26 as the time of writing this, so that puts some perspective). Talk was very conversational, he even knew the place I grew on as he was a biker aswell.
 
-Interview #5 was with a VP of Product. An american programmer that shifted into the "political role" because he experienced shitty Project Managers in his life, and just wanted to make the engineers not experience that pain. Mad respect 🫡 I felt the time was limited and would have loved to talk more with him. After this... silence, they would provide a final conclusion by end of week.
+**Interview #5** was with a VP of Product. An american programmer that shifted into the "political role" because he experienced shitty Project Managers in his life, and just wanted to make the engineers not experience that pain. Mad respect 🫡 I felt the time was limited and would have loved to talk more with him. After this... silence, they would provide a final conclusion by end of week.
 
 ![yay](yayy.gif)
 
-The job offer is here! I am excited to announce I will join Docker in my next career step!
+**The job offer is here!** I am excited to announce I will join Docker in my next career step!
 
+Why
 ## Conclusions
 
 Instead of blaming the world from a mysanthropist point of view, It would be really nice if interview processes had:
