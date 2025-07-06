@@ -1,17 +1,17 @@
 ---
 title: CV
-date: "2023-04-20"
+date: "2025-07-06"
 tags: CV, curriculum, knowledge
 ---
 
 # My CV
 
-Updated 27 May 2023
+Updated 06 Jul 2025
 
-## 2023 - Today
-🛠️Currently at [Xentral](https://xentral.com/) - SRE/DevOps Engineer & Chief Emoji Officer (Berlin/Remote)  
+## 2025
+🛠️Currently at [Docker](https://docker.com/) - Software Engineer (Supply Chain Security)
 
-## 2022
+## 2022 - 2025
 [Xentral](https://xentral.com/) - SRE/DevOps Engineer & Chief Emoji Officer (Berlin/Remote)  
   Ansible  
   Terragrunt  
