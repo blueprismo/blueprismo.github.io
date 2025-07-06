@@ -112,7 +112,6 @@ Damn, Docker is one technology I trully love, my first interview was with Gauri 
 
 **The job offer is here!** I am excited to announce I will join Docker in my next career step!
 
-Why
 ## Conclusions
 
 Instead of blaming the world from a mysanthropist point of view, It would be really nice if interview processes had:
