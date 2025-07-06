@@ -16,7 +16,7 @@ Pawns can also deliver [checkmates](https://en.wikipedia.org/wiki/Checkmate_patt
 
 Above, `a3++` ended the game
 
-We are too many people in this world, and people lie a lot in their resume. There is the story of the *Chauffeur knowledge*:
+There is a funny story of the *Chauffeur knowledge*:
 >I frequently tell the apocryphal story about how Max Planck, after he won the Nobel Prize, went around Germany giving the same standard lecture on the new quantum mechanics.  
 >
 >Over time, his chauffeur memorized the lecture and said, “Would you mind, Professor Planck, because it’s so boring to stay in our routine. [What if] I gave the lecture in Munich and you just sat in front wearing my chauffeur’s hat?” Planck said, “Why not?” And the chauffeur got up and gave this long lecture on quantum mechanics.  
@@ -24,7 +24,8 @@ We are too many people in this world, and people lie a lot in their resume. Ther
 >After which a physics professor stood up and asked a perfectly ghastly question.  
 >The speaker said, “Well I’m surprised that in an advanced city like Munich I get such an elementary question. I’m going to ask my chauffeur to reply.”  
 
-There are lot of outstanding engineers out there (like Romans Krjukovs or Bill Kalaitzis), some average ones (like me) and lots of fake prophets feeded with buzzwords in their mouths, ready to be puked in front of some HR interview! Let's get started!
+The idea of _Chauffeur Knowledge_ is a day to day hassle in the recruiting processes where humans must triage the best available picks. 
+There are lots of outstanding engineers out there (like Romans Krjukovs or Bill Kalaitzis), some average ones (like me) and lots of fake prophets stuffed with buzzwords in their mouths, ready to be puked in front of some HR interview! Welcome to the jungle of IT job searching 🦧
 
 ## Laugh at cringedin
 
@@ -38,14 +39,14 @@ Well, who would have guessed? An automated rejection appeared in my mailbox
 ![melissa_rejection](melissa_rejection.png)
 
 After meeting Melissa (we had a nice life talk!) and explaining this cumbersome mail rejection, she just admitted
-> "There are too many applicants, and most of them are automatically rejected by some filters". 
+> "There are too many applicants, and most of them are automatically rejected by some filters".
 
 Cannot blame her, we are all gears of a bigger system.
 
 ## Amazing! Not Amazon
 
 So I had a round of interviews with Amazon, a big tech giant.
-They were trying to fulfill a position for a "Sovereign Cloud in Europe", the project looks promising, it seems the GOLIVE phase is in 8 months. So my curiosity began to kick in and I asked some questions (the following is a non-exhaustive list)
+They were trying to fulfill a position for a "Sovereign Cloud in Europe", the project looks promising, it seems the "GO LIVE" phase is in 8 months. So my curiosity began to kick in and I asked some questions (the following is a non-exhaustive list)
 
 - What is expected of me in this project?
 - Could you [metaphorically] explain me how is a normal day in this job?
