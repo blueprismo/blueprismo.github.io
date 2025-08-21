@@ -27,7 +27,7 @@ There is a funny story of the *Chauffeur knowledge*:
 The idea of _Chauffeur Knowledge_ is a day to day hassle in the recruiting processes where humans must triage the best available picks.
 There are lots of outstanding engineers out there (like Romans Krjukovs or Bill Kalaitzis), some average ones (like me) and lots of fake prophets stuffed with buzzwords in their mouths, ready to be puked in front of some HR interview! Welcome to the jungle of IT job searching 🦧
 
-## Laugh at cringedin
+## Cringedin
 
 In the sad world of today we rely on linkedin for business connections.
 I once had such a message:
@@ -103,7 +103,7 @@ Damn, Docker is one technology I trully love, my first interview was with Gauri 
 
 ![stressed](stress.gif)
 
-**Interview #3** was pure poetry. The exercise given was smoothly done, with some quick stackoverflow help for some bash syntax tips. No GPTs or generated crap, all from carbon-based intelligence. After the test we had a casual chat. I admitted not knowing about provenance files in detail, and being ignorant in some other topics.
+**Interview #3** was pure poetry. The exercise given was smoothly done, with some quick stackoverflow help for some bash syntax tips. No GPTs or generated crap, all from carbon-based intelligence. After the test we had a casual chat. I admitted not knowing about provenance in detail, and being ignorant in some other topics.
 
 **Interview #4** was with an Engineering Manager. That man was with the big players, he told me he worked with the creator of [SpringBoot](https://spring.io/projects/spring-boot) and he's been more than 20 years in business (I'm 26 as the time of writing this, so that puts some perspective). Talk was very conversational, he even knew the place I grew on as he was a biker aswell.
 
