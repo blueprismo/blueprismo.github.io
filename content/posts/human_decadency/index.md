@@ -1,12 +1,12 @@
 ---
 title: Decaying human interactions
 Summary: Some anecdotical event that happened somewhere, at some time, regarding human interactions.
-date: "2025-06-20"
+date: "2025-08-20"
 ---
 
 # Job offers disclaimer
 
-I am aware that some information during hiring processes are top secret! Will try to keep it like that, but in any case life itself is a joke, and as nobody reads this blog with too much seriousness, and I hope it keeps like that.  
+I am aware that some information during hiring processes are top secret! Will try to keep it like that, but in any case life itself is a joke, and as nobody reads this blog with too much seriousness, and I hope it keeps like that.
 
 There comes a day in your life that something pushes you out of your current context, apathy, boredom, test your free will, could be a large list!
 In some of those cases, people can get curious about whether their work may be also valued elsewhere. Am I still a pawn in this game?
@@ -17,24 +17,24 @@ Pawns can also deliver [checkmates](https://en.wikipedia.org/wiki/Checkmate_patt
 Above, `a3++` ended the game
 
 There is a funny story of the *Chauffeur knowledge*:
->I frequently tell the apocryphal story about how Max Planck, after he won the Nobel Prize, went around Germany giving the same standard lecture on the new quantum mechanics.  
+>I frequently tell the apocryphal story about how Max Planck, after he won the Nobel Prize, went around Germany giving the same standard lecture on the new quantum mechanics.
 >
->Over time, his chauffeur memorized the lecture and said, “Would you mind, Professor Planck, because it’s so boring to stay in our routine. [What if] I gave the lecture in Munich and you just sat in front wearing my chauffeur’s hat?” Planck said, “Why not?” And the chauffeur got up and gave this long lecture on quantum mechanics.  
+>Over time, his chauffeur memorized the lecture and said, “Would you mind, Professor Planck, because it’s so boring to stay in our routine. [What if] I gave the lecture in Munich and you just sat in front wearing my chauffeur’s hat?” Planck said, “Why not?” And the chauffeur got up and gave this long lecture on quantum mechanics.
 >
->After which a physics professor stood up and asked a perfectly ghastly question.  
->The speaker said, “Well I’m surprised that in an advanced city like Munich I get such an elementary question. I’m going to ask my chauffeur to reply.”  
+>After which a physics professor stood up and asked a perfectly ghastly question.
+>The speaker said, “Well I’m surprised that in an advanced city like Munich I get such an elementary question. I’m going to ask my chauffeur to reply.”
 
-The idea of _Chauffeur Knowledge_ is a day to day hassle in the recruiting processes where humans must triage the best available picks. 
+The idea of _Chauffeur Knowledge_ is a day to day hassle in the recruiting processes where humans must triage the best available picks.
 There are lots of outstanding engineers out there (like Romans Krjukovs or Bill Kalaitzis), some average ones (like me) and lots of fake prophets stuffed with buzzwords in their mouths, ready to be puked in front of some HR interview! Welcome to the jungle of IT job searching 🦧
 
 ## Laugh at cringedin
 
 In the sad world of today we rely on linkedin for business connections.
-I once had such a message:  
+I once had such a message:
 
 ![Melissa_message](melissa_message.png)
 
-Seems nice, I got reached for a job offer in LinkedIn and I agreed on a first talk. Just out of curiosity, I went to that company webpage and applied with the same CV for the same role.  
+Seems nice, I got reached for a job offer in LinkedIn and I agreed on a first talk. Just out of curiosity, I went to that company webpage and applied with the same CV for the same role.
 Well, who would have guessed? An automated rejection appeared in my mailbox
 ![melissa_rejection](melissa_rejection.png)
 
@@ -43,7 +43,7 @@ After meeting Melissa (we had a nice life talk!) and explaining this cumbersome 
 
 Cannot blame her, we are all gears of a bigger system.
 
-## Amazing! Not Amazon
+## Amazing! Amazon
 
 So I had a round of interviews with Amazon, a big tech giant.
 They were trying to fulfill a position for a "Sovereign Cloud in Europe", the project looks promising, it seems the "GO LIVE" phase is in 8 months. So my curiosity began to kick in and I asked some questions (the following is a non-exhaustive list)
@@ -63,8 +63,8 @@ My train of thought was exposed in the comments, as I exposed my interviewer if 
 
 ![amazon_test](image.png)
 
-I was a bit unhappy with the results as there were some syntax errors, but take it as pseudo-code.  
-After that, there were 4 more interviews of 1 hour each, explaining life-situations.  
+I was a bit unhappy with the results as there were some syntax errors, but take it as pseudo-code.
+After that, there were 4 more interviews of 1 hour each, explaining life-situations.
 And on top of that a final one, to get more technical questions which IMHO were basic SSH questions (private and public key permissions, which port it connects to, types of keys, etc.)
 
 After at least 5 more interviews, the final review was assessed:
@@ -97,7 +97,7 @@ I tend to express my train of thought while doing the exercise, and I was back a
 
 ## Docker
 
-Damn, Docker is one technology I trully love, my first interview was with Gauri Razdan, a wonderful woman based in California. The interview was at the end of my european day on a Friday. The talk was smooth, and the destination for the project is Docker DHI ([Docker Hardened Images](https://www.docker.com/blog/introducing-docker-hardened-images/)), they look for a stereotypical devops role, a fellow that knows in all sectors. I think I could be a great fit! Let's see how it goes.
+Damn, Docker is one technology I trully love, my first interview was with Gauri Razdan, based in California. The interview was at the end of my european day on a Friday. The talk was smooth, and the destination for the project is Docker DHI ([Docker Hardened Images](https://www.docker.com/blog/introducing-docker-hardened-images/)), they look for a stereotypical devops role, a fellow that knows in all sectors. I think I could be a great fit! Let's see how it goes.
 
 **Interview #2** was a bit disastrous, there was a graphql exercise which I admitted it's been a while since I don't tamper with it, and couldn't finish on time. I punish myself and the voices in my head tell me bad things, luckily there is a third interview tomorrow. The guy was very comprehensive and empathetic. Kudos for his human behaviour <3
 
