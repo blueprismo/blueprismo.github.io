@@ -4,7 +4,6 @@ summary: Explanation of XSS Angular DOM based vulnerability.
 date: "2022-08-07T10:00:00+02:00"
 ---
 
-
 # Introduction
 
 Tonight I'm doing another challenge for XSS vulnerabilities, specially with AngularJS which is a really common framework for developing webapps.
@@ -30,7 +29,7 @@ The way Angular binds data into the HTML is via expressions, and AngularJS expre
 ### Hands on! :fire:
 
 We have this challenge, with an input that seems to be "unsafe":  
-![xss dom image 1](xssdom1.PNG)
+![xss dom image](xssdom1.PNG)
 
 Let's see if the response source-code contains something interesting:
 
