@@ -1,10 +1,10 @@
-baseURL: 'https://blueprismo.com'
+baseURL: 'https://www.blueprismo.com'
 languageCode: 'en-us'
 title: 'blueprismo'
 enableEmoji: true
 googleAnalytics: "G-XC5Z9P941P"
 copyright: "© Blueprismo"
-enableRobotsTXT: true 
+enableRobotsTXT: true
 
 params:
   prompt: "Blueprismo"
@@ -35,7 +35,7 @@ languages:
 
 # menu
 menu:
-  main: 
+  main:
   - name: Posts
     pageRef: /posts
     url: /posts
@@ -46,7 +46,7 @@ menu:
     pageRef: /about
     url: /about
 
-# Sitemap 
+# Sitemap
 sitemap:
   changefreq: monthly
   filename: sitemap.xml
