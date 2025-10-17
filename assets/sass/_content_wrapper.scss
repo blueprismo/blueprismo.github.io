@@ -9,7 +9,7 @@
 }
 
 #content_wrapper blockquote {
-  border-left: 0.25rem solid #ccc; 
+  border-left: 0.25rem solid #ccc;
   padding-left: 1rem;
   font-style: italic;
 }
@@ -32,4 +32,20 @@
 
 #content_wrapper strong {
   text-decoration: underline;
+}
+
+#content_wrapper table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+#content_wrapper th, td {
+  padding: 0.5rem;
+  text-justify: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;  // works in most browsers
+  word-break: break-word; // fallback for long strings
+  white-space: normal;    // allows wrapping instead of single-line
 }
