@@ -217,10 +217,9 @@ docker inspect test-udp-zero --format '{{json .NetworkSettings.Ports}}' | jq
 ```
 
 We can see that testcontainers-go takes the inspect in order to obtain the randomly allocated port,
-
+here's a mermaid diagram:
 
 ```mermaid
-
 flowchart TD
 
   subgraph Docker/Moby daemon
@@ -247,7 +246,6 @@ flowchart TD
   E2 --> E3
   E2 --> E4
   E2 --> E5
-
 ```
 
 The fix was perfect, I made the implicit explicit, as a very wise person and coworker told me (Bjorn).

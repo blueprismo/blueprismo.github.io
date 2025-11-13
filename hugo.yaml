@@ -53,6 +53,9 @@ sitemap:
   priority: 0.5
 
 markup:
+  goldmark:
+    renderer:
+      unsafe: true
   highlight:
     anchorLineNos: false
     codeFences: true
@@ -65,5 +68,6 @@ markup:
     noHl: false
     tabWidth: 4
     style: solarized-dark
+    noHlnolang: false
 
 enableInlineShortcodes: true

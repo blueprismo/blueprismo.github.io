@@ -10,16 +10,16 @@
         {{ block "main" . }}
           <!-- The part of the page that begins to differ between templates -->
         {{ end }}
+        {{ if .Store.Get "hasMermaid" }}
+          <script type="module">
+            import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
+            mermaid.initialize({ startOnLoad: true });
+          </script>
+        {{ end }}
       </div>
       <!--  Footer  -->
       {{ block "footer" . }}
       {{ end }}
     </div>
-    {{ if .Store.Get "hasMermaid" }}
-      <script type="module">
-        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
-        mermaid.initialize({ startOnLoad: true });
-      </script>
-    {{ end }}
   </body>
 </html>
