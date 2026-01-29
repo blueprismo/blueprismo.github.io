@@ -48,12 +48,18 @@ The actual call chain in reality goes this way:
 1. Pod references a PVC (Persistent Volume Claim)
 2. PVC references a StorageClass
 3. Kubernetes controller:
-  i. Reads the StorageClass
-  ii. Sees provisioner: `ebs.csi.aws.com`
-4. Kubernetes calls the CSI driver
-  i. `CreateVolume`
-  ii. `AttachVolume`
-  iii. `NodePublishVolume`
+
+    i. Reads the StorageClass
+
+    ii. Sees provisioner: `ebs.csi.aws.com`
+
+4. Kubernetes calls the CSI driver:
+
+    i. `CreateVolume`
+
+    ii. `AttachVolume`
+
+    iii. `NodePublishVolume`
 
 Excuse my redundancy, but I just want to make it clear that it's a component that allows EKS (and other clusters, really) to handle Amazon EBS storage automatically.
 
