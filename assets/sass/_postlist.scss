@@ -1,8 +1,57 @@
 .postlist {
-    padding: 0 0 1rem 0 ;
+  padding: 0 0 1.5rem 0;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #333;
+  text-align: left;
+}
+
+.postlist:last-child {
+  border-bottom: none;
+}
+
+.postlist-title {
+  display: inline;
+  font-size: 1.15em;
+  margin-bottom: 0.35rem;
+  border-bottom: none;
+}
+
+.postlist-title:hover {
+  border-bottom: #8e8e8e 0.15rem dashed;
+}
+
+.postlist-meta {
+  display: block;
+  color: #8e8e8e;
+  font-size: 0.85em;
+  margin-bottom: 0.5rem;
+}
+
+.postlist-summary {
+  color: #b0b0b0;
+  font-size: 0.95em;
+  margin: 0;
+  line-height: 1.45;
+}
+
+.postlist-readmore {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.9em;
 }
 
 .yearlist {
-    font-size: 3.5rem;
-    margin: 1rem 0 1rem 0;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #89b4fa;
+  margin: 2rem 0 1rem 0;
+  text-align: left;
+}
+
+.yearlist:first-child {
+  margin-top: 0;
+}
+
+.list {
+  text-align: left;
 }

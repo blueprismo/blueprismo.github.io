@@ -6,9 +6,16 @@
 }
 
 // Header sizes
-#content h1,h2,h3,h4,h5,h6 {
+#content h1, h2, h3, h4, h5, h6 {
     margin: initial;
-    text-decoration: underline;
+}
+
+#content h2,
+#content h3 {
+    border-bottom: 1px solid #45475a;
+    padding-bottom: 0.25rem;
+    margin-top: 1.75rem;
+    margin-bottom: 0.75rem;
 }
 #content h1 {
     font-weight: 500;
@@ -31,4 +38,18 @@
     margin-left: auto;
     margin-right: auto;
     //width: 100%;
+}
+
+// Permalink anchors on headings (link only — no visible # prefix)
+#content .hanchor {
+    color: inherit;
+    text-decoration: inherit;
+    font-weight: inherit;
+    border-bottom: none;
+}
+
+#content .hanchor:hover,
+#content .hanchor:focus-visible {
+    color: inherit;
+    border-bottom: none;
 }

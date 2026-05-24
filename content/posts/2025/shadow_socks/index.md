@@ -43,7 +43,7 @@ Here, I put server to `0.0.0.0` because I will be deploying shadowsocks using do
 
 Then we can apply this docker compose file
 
-```docker-compose.yml
+```yaml
 services:
   shadowsocks:
     image: ghcr.io/shadowsocks/ssserver-rust:latest

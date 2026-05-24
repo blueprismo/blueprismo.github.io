@@ -1,2 +1,4 @@
-{{ $style := resources.Get "sass/main.scss" | toCSS | resources.Minify | resources.Fingerprint  }}
-    <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">
+{{ $main := resources.Get "sass/main.scss" | toCSS }}
+{{ $chroma := resources.Get "css/chroma.css" }}
+{{ $style := slice $main $chroma | resources.Concat "css/site.css" | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">

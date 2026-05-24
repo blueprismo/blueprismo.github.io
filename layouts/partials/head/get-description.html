@@ -1,0 +1,6 @@
+{{- $description := .Params.summary | default .Description -}}
+{{- if and (not $description) (eq .Kind "page") (eq .Section "posts") -}}
+  {{- $description = .Summary -}}
+{{- end -}}
+{{- $description = $description | default .Site.Params.description | plainify | strings.TrimSpace | truncate 200 -}}
+{{- return $description -}}

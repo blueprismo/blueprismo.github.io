@@ -13,8 +13,7 @@
     <article id="content">
       {{- with .Content -}}
       <div>
-        {{ . | replaceRE `(<h[1-9] id="([^" ]+)">)(.+)(</h[1-9]>)` `${1}<a href="#${2}" class="hanchor" aria-label="Anchor">
-           ${3} ${4}</a>` | safeHTML }}
+        {{ . | replaceRE `(<h([2-9]) id="([^" ]+)">)(.+?)(</h[2-9]>)` `$1<a href="#$3" class="hanchor" aria-label="Anchor">$4</a>$5` | safeHTML }}
       </div>
       {{- end -}}
     </article>

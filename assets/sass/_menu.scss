@@ -1,15 +1,21 @@
-// // Menu
+.nav-toggle-btn {
+  display: none;
+  cursor: pointer;
+  color: #c5c5c5;
+  padding: 0.25rem;
+  line-height: 0;
+}
+
 .menu {
   display: flex;
 }
 
-// Decorators:
 .menu .is-active {
   color: white;
 }
 
 .menu a, a:visited, a:active {
-    color: inherit;
+  color: inherit;
 }
 
 .menu ul {
@@ -27,7 +33,6 @@
   text-decoration: none;
 }
 
-//underline animation
 .hover-underline-animation {
   display: inline-block;
   position: relative;
@@ -50,4 +55,33 @@
 .hover-underline-animation:hover:after {
   transform: scaleX(1);
   transform-origin: bottom left;
+}
+
+@media only screen and (max-width: 850px) {
+  .nav-toggle-btn {
+    display: block;
+  }
+
+  .menu ul {
+    display: none;
+    position: absolute;
+    top: calc(100% + 0.75rem);
+    right: 0;
+    flex-direction: column;
+    background-color: #333;
+    border: 1px solid #45475a;
+    border-radius: 0.4rem;
+    padding: 0.5rem 0;
+    min-width: 8rem;
+    z-index: 10;
+  }
+
+  .nav-toggle:checked ~ .menu ul {
+    display: flex;
+  }
+
+  .menu li {
+    margin: 0;
+    padding: 0.5rem 1rem;
+  }
 }

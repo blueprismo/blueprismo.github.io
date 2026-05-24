@@ -1,5 +1,6 @@
 <head>
     {{ partial "head/meta" . }}
+    {{ partial "head/og" . }}
     {{ partial "head/style" . }}
     <title>{{ .Params.title }} | {{ .Site.Title }} </title>
     <link rel="canonical" href="{{ .Permalink }}" />

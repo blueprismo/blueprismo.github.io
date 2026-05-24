@@ -454,7 +454,7 @@ Markdown provides backslash escapes for the following characters:
 
 ### Basic syntax
 
-``` markdown
+```markdown
   ![Semantic description of the image](https://roneo.org/img/ok.png)
 ```
 

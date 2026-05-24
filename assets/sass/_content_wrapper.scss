@@ -31,13 +31,22 @@
 }
 
 #content_wrapper strong {
-  text-decoration: underline;
+  font-weight: 600;
 }
 
 #content_wrapper table {
   width: 100%;
   table-layout: fixed;
   border-collapse: collapse;
+}
+
+// zebra stripping for tables
+#content_wrapper th {
+  background-color: #333;
+}
+
+#content_wrapper tbody tr:nth-child(even) {
+  background-color: #252628;
 }
 
 #content_wrapper th, td {

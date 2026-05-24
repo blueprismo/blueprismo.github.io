@@ -8,6 +8,9 @@ enableRobotsTXT: true
 
 params:
   prompt: "Blueprismo"
+  author: "Blueprismo"
+  description: "Technology, security, and DevOps articles — notes and thoughts from Blueprismo."
+  og_image: "/favicon.ico"
   social:
   - name: Github
     image: /images/socials/github.svg
@@ -64,10 +67,10 @@ markup:
     lineNoStart: 1
     lineNos: false
     lineNumbersInTable: true
-    noClasses: true
+    noClasses: false
     noHl: false
     tabWidth: 4
-    style: solarized-dark
+    style: catppuccin-mocha
     noHlnolang: false
 
 enableInlineShortcodes: true

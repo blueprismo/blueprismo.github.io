@@ -1,24 +1,19 @@
 {{ define "main" }}
 <div class="list">
   {{ range .Pages.GroupByDate "2006" }}
-  <h1 class="yearlist">{{ .Key }}</h1>
+  <h2 class="yearlist">{{ .Key }}</h2>
 
     {{ range .Pages }}
-    <div class="postlist">
-      <a href="{{ .RelPermalink }}" aria-label="{{ .Summary }}" >{{ .Title }}</a><br/>
-      <div class="meta">{{ .Date.Format "02-01-2006" }}</div>
-       {{ .Summary }}
+    <article class="postlist">
+      <a class="postlist-title" href="{{ .RelPermalink }}" aria-label="{{ .Title }}">{{ .Title }}</a>
+      <time class="postlist-meta" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02 Jan 2006" }}</time>
+      {{ with .Summary }}<p class="postlist-summary">{{ . }}</p>{{ end }}
       {{ if .Truncated }}
-      <!-- This <div> includes a read more link, but only if the summary is truncated... -->
-      <div>
-        <a href="{{ .RelPermalink }}" id="read_more">Read More…</a>
-      </div>
-      {{ end }}  
-      <br/>
-      <br/>
-    </div>
+      <a class="postlist-readmore" href="{{ .RelPermalink }}">Read more…</a>
+      {{ end }}
+    </article>
     {{ end }}
 
-{{ end }}
+  {{ end }}
 </div>
 {{ end }}

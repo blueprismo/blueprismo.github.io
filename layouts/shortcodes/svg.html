@@ -1,1 +1,1 @@
-{{ readFile (print "assets/svg/" (index .Params 0)) | safeHTML }}
+<span class="inline-svg" aria-hidden="true">{{ readFile (print "assets/svg/" (index .Params 0)) | safeHTML }}</span>

@@ -6,19 +6,83 @@
     text-rendering: optimizeLegibility;
 }
 
-// CODE block
+// Inline code (outside fenced blocks)
 code:not([data-lang]) {
-  background-color: #002b36;
-  color: #2aa198;
-  border-radius: 0.25rem;
+  background-color: #313244;
+  color: #cdd6f4;
+  border-radius: 0.3rem;
+  padding: 0.1em 0.35em;
+  font-size: 0.9em;
   overflow-wrap: break-word;
 }
 
-// make Code generated blocks scroll when they surpass the boundaries
-.highlight > pre {
-  overflow: scroll;
-  
-  // If I want wrap instead of scroll uncomment this:
-  //overflow-wrap: break-word;
-  //white-space: pre-wrap; /* Allow wrapping inside code block */
+// Fenced code blocks
+.codeblock {
+  position: relative;
+  margin: 1.25rem 0;
+}
+
+.copy-snippet {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  z-index: 1;
+  padding: 0.25rem 0.55rem;
+  border: 1px solid #585b70;
+  border-radius: 0.3rem;
+  background-color: #313244;
+  color: #cdd6f4;
+  font-family: inherit;
+  font-size: 0.72em;
+  line-height: 1.2;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.codeblock:hover .copy-snippet,
+.codeblock:focus-within .copy-snippet,
+.copy-snippet:focus-visible {
+  opacity: 1;
+}
+
+.copy-snippet:hover {
+  background-color: #45475a;
+  border-color: #89b4fa;
+}
+
+.copy-snippet.is-copied {
+  opacity: 1;
+  border-color: #a6e3a1;
+  color: #a6e3a1;
+}
+
+.copy-snippet.is-error {
+  opacity: 1;
+  border-color: #f38ba8;
+  color: #f38ba8;
+}
+
+.highlight {
+  border-radius: 0.5rem;
+  border: 1px solid #45475a;
+  background-color: #1e1e2e;
+  overflow: hidden;
+}
+
+.highlight > pre,
+.highlight .chroma {
+  margin: 0;
+  padding: 1rem 1.15rem;
+  overflow-x: auto;
+  font-size: 0.88em;
+  line-height: 1.55;
+  tab-size: 4;
+}
+
+.highlight pre code {
+  font-family: inherit;
+  background: none;
+  padding: 0;
+  border-radius: 0;
 }
