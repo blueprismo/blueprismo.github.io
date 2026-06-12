@@ -2,7 +2,7 @@
 title: Testing Helm charts with sk8s and testcontainers-go
 Summary: How DHI uses testcontainers-go and sk8s to test Helm charts in ephemeral k3s clusters — scaffolding, image loading, and one-cluster testing strategies.
 date: "2026-06-11"
-draft: true
+draft: false
 ---
 
 # Intro
