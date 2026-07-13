@@ -1,16 +1,16 @@
 ---
-title: The cute calico cat 🐱
-Summary: Having some fun deploying calico in k3s and demonstrating it's capabilities.
+title: The cute Calico cat 🐱
+Summary: Having some fun deploying Calico in k3s and demonstrating its capabilities.
 date: "2026-06-06"
 draft: false
 ---
 
 # Intro
 
-Feeling curious to dive deeper on how calico works, why is it used, and want to find a way to test it locally. IMHO that's the best way of learning something, to experiment, tweak, answer questions and think outside the box.
+I was curious to dive deeper into how Calico works, why it is used, and how to test it locally. IMHO that's the best way to learn something: experiment, tweak, answer questions, and think outside the box.
 
-For that reason today this article will be related on how to deploy calico and explore it's core functionality.
-In some years this will deem outdated, but for the readers that are both curious and want to experiment, the closer in time you are reading these words, the smaller the drift between what I've tested and what the future will bring (lots of breaking changes, deprecations, and maybe even some friends along the way!)
+For that reason, today's article is about how to deploy Calico and explore its core functionality.
+In a few years this will seem outdated, but for readers who are both curious and want to experiment, the closer in time you are reading these words, the smaller the drift between what I've tested and what the future will bring (lots of breaking changes, deprecations, and maybe even some friends along the way!).
 
 ## Prerequisites
 
@@ -18,28 +18,28 @@ In some years this will deem outdated, but for the readers that are both curious
 
 We will need a k8s cluster, I will use [k3s](https://docs.k3s.io/quick-start) as it's a lightweight k8s distribution and it's easy, fast and cheap to set up.
 
-Calico uses [MutatingAdmissionPolicies](https://kubernetes.io/docs/reference/access-authn-authz/mutating-admission-policy/) for defaulting, which require the beta `admissionregistration.k8s.io/v1beta1` API. That API is available in Kubernetes 1.34 and later.
+Calico uses [MutatingAdmissionPolicies](https://kubernetes.io/docs/reference/access-authn-authz/mutating-admission-policy/) for defaulting, which requires the beta `admissionregistration.k8s.io/v1beta1` API. That API is available in Kubernetes 1.34 and later.
 
-If you want to use a cluster in EKS, GKE, AKS or Mirantis Kubernetes Engine (MKE), bear in mind that some additional steps might be needed
+If you want to use a cluster in EKS, GKE, AKS, or Mirantis Kubernetes Engine (MKE), bear in mind that some additional steps might be needed.
 
 ### Helm
 
-We will install calico via it's helm chart, so for that reason we will need [helm](https://helm.sh/docs/overview/)
+We will install Calico via its Helm chart, so for that reason we will need [Helm](https://helm.sh/docs/overview/).
 
 ## What is Calico?
 
-Calico is a cat breed, and a very cool project created and open sourced by Tigera! For an analogy it is a "Network Police" for kubernetes. It enables CNI networking and it can also act as a NPE (Network Policy Engine).
+Calico is a cat breed, and a very cool project created and open sourced by Tigera! As an analogy, it is a "Network Police" for Kubernetes. It enables CNI networking and it can also act as an NPE (Network Policy Engine).
 
 The Kubernetes network model defines a "flat" network in which:
 
-- Every pod get its own IP address.
+- Every pod gets its own IP address.
 - Pods on any node can communicate with all pods on all other nodes without NAT.
 
 Within this model there's quite a lot of flexibility for supporting different networking approaches and environments. The details of exactly how the network is implemented depend on the combination of CNI, network, and cloud provider plugins being used.
 
 ## Concepts
 
-Here are some important concepts the reader should know to follow the article properly, if you're familiar with linux, networking and k8s, you can skip to the ![hands on](#hands_on) section.
+Here are some important concepts the reader should know to follow the article properly. If you're familiar with Linux, networking, and k8s, you can skip to the [Hands on](#hands-on) section.
 
 ### Container Network Interface (CNI)
 
@@ -127,15 +127,15 @@ VXLAN hides the pod network from the physical network by tunneling packets betwe
 #### A visual example of VXLAN
 
 ![vxlan_tunnel](vxlan.png)
-In the above image, the "cubes" are the virtual ethernet encapsulating the underlay packages
+In the above image, the "cubes" are the virtual Ethernet devices encapsulating the underlay packets.
 
 
 #### A visual example of BGP
 
 ![bgp](bgp.png)
-In the above image, each node advertises it's addresses ('node AS100' and 'node AS200') that way the network is "aware" on how packets need to be trasmitted.
+In the above image, each node advertises its addresses ('node AS100' and 'node AS200'), so the network is aware of how packets need to be transmitted.
 
-In cloud providers (AWS, Azure, GCP...) you usually can't tell the cloud routers about your Pod networks, and that's why VXLAN is preferred. But in scenarios where you know/control the routers, like in a data-centers, BGP is preferred as you don't have encapsulation overhead.
+In cloud providers (AWS, Azure, GCP...), you usually can't tell the cloud routers about your Pod networks, and that's why VXLAN is preferred. But in scenarios where you know or control the routers, like in a data center, BGP is preferred because you avoid encapsulation overhead.
 
 ### eBPF (Extended Berkeley Packet Filter)
 
@@ -164,10 +164,9 @@ This follows the Kubernetes Operator pattern, making Calico installation, upgrad
 
 ## Hands on
 
-K3s is a lightweight distribution for k8s, and it uses [flannel](https://github.com/flannel-io/flannel) which is intentionally simple.
+K3s is a lightweight distribution for k8s, and it uses [Flannel](https://github.com/flannel-io/flannel), which is intentionally simple.
 
-As flannel doesn't suffice for our goals (it doesn't provide advanced network policy enforcement, doesn't provide BGP, eBPF dataplane, etc. ❌), we will install it with flannel disabled and it's lightweight network policy controller (kube-router)
-because Calico will provide that functionality for us
+As Flannel doesn't suffice for our goals (it doesn't provide advanced network policy enforcement, BGP, or an eBPF dataplane ❌), we'll create the cluster with Flannel disabled and k3s's built-in network policy controller disabled, because Calico will provide that functionality for us.
 
 There is initially no Pod networking until Calico is installed, but the intent is to replace Flannel with another CNI.
 
@@ -198,7 +197,7 @@ This is expected: we disabled Flannel, so k3s has no CNI plugin installed yet. K
 
 Installing Calico will provide the missing CNI functionality and move the node to `Ready`.
 
-### Installing calico
+### Installing Calico
 
 After setting up our CNI-less cluster, we need to install the tigera-operator:
 
@@ -228,7 +227,7 @@ kubectl create namespace tigera-operator
 
 #### Now... custom resources
 
-The calico project has brought [native v3 CRDs](https://docs.tigera.io/calico/latest/operations/native-v3-crds) which eliminate the need for the aggregation API server and allows kubectl to manage `projectcalico.org/v3` resources directly. The v3 CRDs are not in GA, worth exploring how it looks.
+The Calico project has brought [native v3 CRDs](https://docs.tigera.io/calico/latest/operations/native-v3-crds), which eliminate the need for the aggregation API server and allow kubectl to manage `projectcalico.org/v3` resources directly. The v3 CRDs are not GA yet, but they are worth exploring.
 
 You can install the crds with:
 
@@ -236,7 +235,7 @@ You can install the crds with:
 helm template calico-crds projectcalico/projectcalico.org.v3 --version v3.32.1 | kubectl apply --server-side -f -
 ```
 
-Once the CRDs (v3) are installed, you can install our calico deployment with
+Once the CRDs (v3) are installed, you can install the Calico deployment with:
 
 ```sh
 helm install calico projectcalico/tigera-operator \
@@ -244,11 +243,11 @@ helm install calico projectcalico/tigera-operator \
   -f values.yaml \
   --namespace tigera-operator
 
-## After helm install, verify all the calico components are healthy, and that other pods spawn succesfully
+# After helm install, verify all the Calico components are healthy and that other pods spawn successfully
 watch kubectl get pods -n calico-system
 ```
 
-Thanks to the v3 crds, we can also have a quick glance of how the calico components statuses are:
+Thanks to the v3 CRDs, we can also get a quick glance at how the Calico component statuses look:
 
 ```sh
 ❯ kubectl get tigerastatus
@@ -260,8 +259,8 @@ ippools     True        False         False      19m     All objects available
 tiers       True        False         False      19m     All objects available
 whisker     True        False         False      18m     All objects available
 
-## see pod IPs
-❯ kubectl get pods -A -o wide
+# See pod IPs
+kubectl get pods -A -o wide
 kubectl get ippools.projectcalico.org
 NAMESPACE         NAME                                       READY   STATUS      RESTARTS   AGE   IP             NODE                  NOMINATED NODE   READINESS GATES
 calico-system     calico-kube-controllers-7968695b58-6gptp   1/1     Running     0          20m   10.42.75.193   k3d-calico-server-0   <none>           <none>
@@ -279,9 +278,9 @@ NAME                  CIDR           VXLAN    IPIP    NAT    ALLOCATABLE   AGE
 default-ipv4-ippool   10.42.0.0/16   Always   Never   true   True          21m
 ```
 
-#### Ip diffs
+#### IP differences
 
-Notice some IP addresses that are outside of the ipv4 pool?
+Notice some IP addresses that are outside of the IPv4 pool?
 This is expected, Calico is responsible for creating the Pod network, but if the `calico-node` Pod itself required a Pod IP address, it couldn't start until the Pod network already existed.
 
 To break this loop, Calico's bootstrap components (like `calico-node`) run with `hostNetwork: true`, meaning they use the node's existing network stack instead of waiting for the Kubernetes Pod network.
@@ -290,23 +289,23 @@ Once Calico initializes the CNI, Kubernetes can assign Pod IP addresses and sche
 
 The Tigera Operator also uses `hostNetwork` so it can reliably communicate with the Kubernetes API server while the cluster networking is still being established.
 
-Notice that the bootstrap elements are in the hostNetwork,
+Notice that the bootstrap elements run with `hostNetwork`:
 
 - calico-node: must run on the host because it configures node networking, CNI files, routes, iptables/eBPF rules, VXLAN devices, etc.
 - calico-typha: sits between calico-node and the Kubernetes API to reduce API load; it needs reliable early connectivity.
-- tigera-operator: reconciles/install Calico components, so it is useful for it to work even while Pod networking is still being created.
+- tigera-operator: reconciles and installs Calico components, so it is useful for it to work even while Pod networking is still being created.
 
-While the others are regular cluster workloads.
+The others are regular cluster workloads.
 Once Calico is up, they can safely run on the Pod network and get 10.42.x.x IPs.
 
-### Testing calico
+### Testing Calico
 
 #### Network Policy (k8s)
 
 [Network Policies](https://kubernetes.io/docs/concepts/services-networking/network-policies/) are a k8s resource which allow us to specify rules for traffic flow within our cluster.
 
-Here's a script that will create two pods, one server running nginx, and a client running curl.
-We want to ensure
+Here's a script that will create two pods: one server running nginx, and one client running curl.
+We want to ensure they can communicate:
 
 ```sh
 kubectl create ns calico-demo
@@ -329,7 +328,7 @@ kubectl exec -n calico-demo client -- curl -I http://server
 # Should get the `HTTP/1.1 200 OK` response.
 ```
 
-This should work as it's the default Kubernetes behaviour
+This should work, as it's the default Kubernetes behaviour.
 
 
 Everyone -> nginx ✅
@@ -350,7 +349,7 @@ spec:
 EOF
 ```
 
-What this does is to deny all income traffic to every pod in the calico-demo namespace.
+What this does is deny all incoming traffic to every pod in the calico-demo namespace.
 Now the situation in this namespace is:
 
 
@@ -369,7 +368,7 @@ curl: (28) Connection timed out after 5004 milliseconds
 command terminated with exit code 28
 ```
 
-If we add an explicit allow only allowing INBOUND TRAFFIC TO the pods that have the `app: server` role FROM `role=client` labels.
+If we add an explicit allow rule, permitting inbound traffic to pods with the `app: server` label only from pods with the `role: client` label:
 
 ```sh
 cat <<'EOF' | kubectl apply -f -
@@ -395,14 +394,14 @@ spec:
 EOF
 ```
 
-And now we test again
+And now we test again:
 
 ```sh
 kubectl exec -n calico-demo client -- curl -I http://server
 # should return `HTTP/1.1 200 OK`
 ```
 
-If another pod is without that label in this namespace, it should not be able to reach our nginx server:
+If another pod in this namespace does not have the `role: client` label, it should not be able to reach our nginx server:
 
 ```sh
 kubectl run stranger \
@@ -413,7 +412,7 @@ kubectl run stranger \
 # let the "stranger" pod spawn
 sleep 5
 
-## test both
+# test both
 kubectl exec -n calico-demo client -- curl -I http://server
 # HTTP/1.1 200 OK
 
@@ -421,13 +420,13 @@ kubectl exec -n calico-demo stranger -- curl -m 5 -I http://server
 # timeout!
 ```
 
-Even though they are in the same namespace
+Even though they are in the same namespace.
 
-#### Global Network Policy (calico)
+#### Global Network Policy (Calico)
 
-Calico extends the native Network Policies by adding the `GlobalNetworkPolicy` which is cluster-scoped. It isn't tied to a namespace, making it ideal for organization-wide security policies.
+Calico extends the native Network Policies by adding `GlobalNetworkPolicy`, which is cluster-scoped. It isn't tied to a namespace, making it ideal for organization-wide security policies.
 
-Following the same example as in the Network Policy, we will create a cluster-scoped one:
+Following the same example as above, we will create a cluster-scoped policy:
 
 ```sh
 cat <<'EOF' | kubectl apply -f -
@@ -455,8 +454,8 @@ curl: (28) Resolving timed out after 5004 milliseconds
 command terminated with exit code 28
 ```
 
-Notice the error message is "Resolving timed out" instead of "Connection timed out"
-Let's allow DNS for now, cluster-wide. We will do so by creating another Global Network Policy with a lower `order` number (100 vs 1000) and allowing coreDNS to have ports 53 TCP and UDP allowed.
+Notice the error message is "Resolving timed out" instead of "Connection timed out".
+Let's allow DNS for now, cluster-wide. We will do so by creating another Global Network Policy with a lower `order` number (100 vs 1000) and allowing CoreDNS traffic on ports 53 over TCP and UDP.
 
 ```sh
 cat <<'EOF' | kubectl apply -f -
@@ -513,17 +512,17 @@ curl: (28) Connection timed out after 5009 milliseconds
 command terminated with exit code 28
 ```
 
-Now the resolution happens, but ingress traffic is blocked globally even though we still have the k8s namespaced-scoped network policy!
+Now resolution works, but ingress traffic is blocked globally even though we still have the Kubernetes namespace-scoped NetworkPolicy in place.
 
 ## Conclusions
 
 Today we've learned:
 
 - How to replace Flannel with Calico
-- Understood how the Tigera Operator bootstraps the networking stack
-- Verify Pod-to-Pod communication
-- Enforced Kubernetes NetworkPolicy resources
-- Introduced Calico's own GlobalNetworkPolicy API.
+- How the Tigera Operator bootstraps the networking stack
+- How to verify Pod-to-Pod communication
+- How to enforce Kubernetes NetworkPolicy resources
+- How Calico's GlobalNetworkPolicy API extends cluster-wide policy enforcement
 
 In the next article, we'll look under the hood and explore one of Calico's most powerful features: the eBPF dataplane.
 We'll compare it with the traditional iptables-based dataplane, understand how it can replace kube-proxy, and see why it can improve both performance and scalability.
