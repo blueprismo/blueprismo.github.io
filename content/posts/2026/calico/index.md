@@ -1,7 +1,7 @@
 ---
 title: The cute Calico cat 🐱
 Summary: Having some fun deploying Calico in k3s and demonstrating its capabilities.
-date: "2026-06-06"
+date: "2026-07-01"
 draft: false
 ---
 
